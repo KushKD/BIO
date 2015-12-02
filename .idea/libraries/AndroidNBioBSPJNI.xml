@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AndroidNBioBSPJNI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/AndroidNBioBSPJNI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
