@@ -6,22 +6,20 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class AddActivity extends Activity {
+public class ReportActivity extends Activity {
 
-    Button bt_Close , bt_Verify , bt_DetectDevice;
+    Button bt_CloseReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_report);
 
-        bt_Close = (Button)findViewById(R.id.close);
-        bt_Verify = (Button)findViewById(R.id.verifyaadhaar);
-        bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
+        bt_CloseReport = (Button)findViewById(R.id.closereport);
 
-        bt_Close.setOnClickListener(new View.OnClickListener() {
+        bt_CloseReport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                AddActivity.this.finish();
+                ReportActivity.this.finish();
             }
         });
     }

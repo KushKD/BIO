@@ -49,6 +49,7 @@
                      android:layout_weight="1"
                      android:orientation="vertical">
                      <Button
+                         android:id="@+id/detectdeviceadd"
                          android:layout_width="match_parent"
                          android:layout_height="match_parent"
                          android:text="Detect Device"
@@ -64,6 +65,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <Button
+                        android:id="@+id/close"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Close"
@@ -125,11 +127,26 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="Enter Aadhaar"
                             android:inputType="number"
+                            android:maxLength="12"
                             android:gravity="center|center_vertical|center_horizontal"
                             android:textSize="24sp"
                             android:textColor="#000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <Button
+                            android:id="@+id/verifyaadhaar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:textSize="24sp"
+                            android:textColor="#000000"
+                            android:text="Verify"
                             android:textStyle="bold"/>
                     </LinearLayout>
 
@@ -142,14 +159,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
-                    <TextView
+
+                    <!-- Two Layouts in this -->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="1"
-                        android:gravity="center|center_vertical|center_horizontal"
-                        android:textSize="24sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Name"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:textSize="24sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="DOB"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:textSize="24sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,8 +199,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="C/O"
-                        android:gravity="left|center_vertical|center_horizontal"
+                        android:hint="C/O"
+                        android:gravity="center|center_vertical|center_horizontal"
                         android:textSize="24sp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
@@ -186,9 +224,16 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/ic_launcher"/>
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_launcher"/>
+                        android:text="Scan first finger"/>
+
+
 
                 </LinearLayout>
 
@@ -199,6 +244,27 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
+                    <LinearLayout
+                        android:id="@+id/l2212"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:background="@drawable/ic_launcher"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scan second fingure"/>
+
+
+
+                    </LinearLayout>
 
 
 

@@ -1,29 +1,28 @@
 package com.nitgen.SDK.AndroidBSP;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class AddActivity extends Activity {
+public class AboutUsActivity extends Activity {
 
-    Button bt_Close , bt_Verify , bt_DetectDevice;
+    Button bt_Close;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_about_us);
 
-        bt_Close = (Button)findViewById(R.id.close);
-        bt_Verify = (Button)findViewById(R.id.verifyaadhaar);
-        bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
+        bt_Close = (Button)findViewById(R.id.closeaboutus);
 
         bt_Close.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                AddActivity.this.finish();
+                AboutUsActivity.this.finish();
             }
         });
+
     }
 
     //Handling the Other Keys Hardware
@@ -57,5 +56,4 @@ public class AddActivity extends Activity {
         }
         return false;
     }
-
 }

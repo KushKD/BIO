@@ -8,5 +8,6 @@
     <string name="title_activity_add">AddActivity</string>
     <string name="title_activity_android__demo">Android_Demo</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_report">ReportActivity</string>
     <style name="AppTheme" parent="android:Theme.Light"/>
 </resources>

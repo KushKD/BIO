@@ -12,8 +12,9 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -39,10 +40,19 @@
         </activity>
         <activity
             android:name="com.nitgen.SDK.AndroidBSP.Android_Demo"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main"
+            android:screenOrientation="landscape" />
         <activity
             android:name="com.nitgen.SDK.AndroidBSP.AddActivity"
-            android:label="@string/title_activity_add" />
+            android:label="@string/title_activity_add"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.nitgen.SDK.AndroidBSP.ReportActivity"
+            android:label="@string/title_activity_report"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.nitgen.SDK.AndroidBSP.AboutUsActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
