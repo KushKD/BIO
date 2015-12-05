@@ -125,6 +125,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1">
                         <EditText
+                            android:id="@+id/et_aadhaar"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="number"
@@ -166,9 +167,27 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1">
                         <TextView
+                            android:id="@+id/tvname"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="Name"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:textSize="24sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/x3"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/tvco"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="C/O"
                             android:gravity="center|center_vertical|center_horizontal"
                             android:textSize="24sp"
                             android:textColor="#000000"
@@ -180,6 +199,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1">
                         <TextView
+                            android:id="@+id/tvdob"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="DOB"
@@ -190,21 +210,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/x3"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="C/O"
-                        android:gravity="center|center_vertical|center_horizontal"
-                        android:textSize="24sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
-                </LinearLayout>
+
 
             </LinearLayout>
 
