@@ -5,9 +5,9 @@ package com.nitgen.SDK.AndroidBSP;
  */
 public class EConstants {
 
-    public static final String URLAAdhaarVerify = "http://hp.gov.in/uidreport/AWW.svc";
-    public static final String methord_SearchAadaar = "searbyAadhaar";
-    public static final String url_Delemetre = "/";
+    public static final String URLAAdhaarVerify = "";
+    public static final String methord_SearchAadaar = "";
+    public static final String url_Delemetre = "";
     public static final String ProgressDialog_Message = "Verifying your Aadhaar please wait....";
     public static final String UserResultAadhaarSearch = "GetWithAadhaarResult";
     public static final String ListEmpty = "User Not found , Please contact the Aadhaar team .";
