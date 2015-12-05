@@ -61,21 +61,17 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
 	private NBioBSPJNI.IndexSearch  indexSearch;
 	private byte[]					byTemplate1;
 	private byte[]					byTemplate2;
-	
 	private byte[]					byCapturedRaw1;
 	private int						nCapturedRawWidth1;
 	private int						nCapturedRawHeight1;
-
 	private byte[]					byCapturedRaw2;
 	private int						nCapturedRawWidth2;
 	private int						nCapturedRawHeight2;
 
 	String   Base64_template1 , Base64_template2;
-	
 	ImageView img_fp_src, img_fp_dst; 
 	TextView tvInfo, tvVer, tvDevice;	
 	Button btnCapture1, btnCapture2, btnVerifyTemplate, btnVerifyRaw, btnAutoOn1, btnAutoOn2;
-	
 	DialogFragment sampleDialogFragment;
 	UserDialog userDialog;
 	Button save,count,verify;

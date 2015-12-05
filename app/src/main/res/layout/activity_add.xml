@@ -48,15 +48,35 @@
                      android:layout_height="match_parent"
                      android:layout_weight="1"
                      android:orientation="vertical">
-                     <Button
-                         android:id="@+id/detectdeviceadd"
+
+                     <LinearLayout
                          android:layout_width="match_parent"
-                         android:layout_height="match_parent"
-                         android:text="Detect Device"
-                         android:gravity="center|center_vertical|center_horizontal"
-                         android:textSize="24sp"
-                         android:textColor="#000000"
-                         android:textStyle="bold"/>
+                         android:layout_height="match_parent">
+                         <Button
+                             android:id="@+id/detectdeviceadd"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:text="Detect Device"
+                             android:gravity="center|center_vertical|center_horizontal"
+                             android:textSize="24sp"
+                             android:textColor="#000000"
+                             android:textStyle="bold"/>
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+                         <TextView
+                             android:id="@+id/tvstatus"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:text="Detect Device"
+                             android:gravity="center|center_vertical|center_horizontal"
+                             android:textSize="24sp"
+                             android:textColor="#000000"
+                             android:textStyle="bold"/>
+                     </LinearLayout>
+
                  </LinearLayout>
 
                 <LinearLayout
@@ -230,6 +250,7 @@
                     android:layout_weight="1">
 
                     <ImageView
+                        android:id="@+id/imagefingureone"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
                         android:background="@drawable/ic_launcher"/>
@@ -259,6 +280,7 @@
                         android:layout_weight="1">
 
                         <ImageView
+                            android:id="@+id/imagefinguretwo"
                             android:layout_width="130dp"
                             android:layout_height="130dp"
                             android:background="@drawable/ic_launcher"/>
