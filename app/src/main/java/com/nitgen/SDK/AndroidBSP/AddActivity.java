@@ -8,11 +8,13 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.DeadObjectException;
 import android.util.Base64;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +28,13 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private NBioBSPJNI.Export       exportEngine;
     private NBioBSPJNI.IndexSearch  indexSearch;
     private Button                  bt_Close , bt_Verify , bt_DetectDevice,save;
-    private EditText                et_Aadhaar;
+    private EditText                et_Aadhaar, et_Name  ,et_CO;
+    private DatePicker              et_DOB;
     private TextView                tv_Name, tv_DOB , tv_CO , tv_Status;
     private List<UserPojo>          userlist;
-    private byte[]					byTemplate1Fingure;
-    private byte[]					byTemplate2Fingure;
+
+    private byte[]					byTemplate1Fingure;  //Fingure 1
+    private byte[]					byTemplate2Fingure;  //Fingure 2
 
     private byte[]					byCapturedRaw1;
     private int						nCapturedRawWidth1;
@@ -44,7 +48,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private DialogFragment          sampleDialogFragment;
     private UserDialog              userDialog;
     private boolean					bCapturedFirst, bAutoOn = false;
-    private String                  Base64_template1 , Base64_template2;
+    private String                  Base64_template1 , Base64_template2;  //Base64 Fingure one and Fingure Two
     private ImageView               iv_ImageFingureOne, iv_ImageFingureTwo;
 
     public static final int QUALITY_LIMIT = 80;
@@ -66,6 +70,10 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         tv_Status = (TextView)findViewById(R.id.tvstatus);
         iv_ImageFingureOne = (ImageView)findViewById(R.id.imagefingureone);
         iv_ImageFingureTwo = (ImageView)findViewById(R.id.imagefinguretwo);
+        et_Name = (EditText)findViewById(R.id.etname);
+        et_DOB = (DatePicker)findViewById(R.id.etdob);
+        et_CO = (EditText)findViewById(R.id.etco);
+
 
         initData();
         sampleDialogFragment.show(getFragmentManager(), "DIALOG_TYPE_PROGRESS");
@@ -145,6 +153,23 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
             }
         });
 
+        /**
+         * Save Button
+         */
+        save.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                //Check Weather the Data is not null
+                 //name
+                 //DOB
+                //Care Off
+                //Fingure 1
+                //Fingure 2
+                //Aadhaar No
+
+            }
+        });
+
     }
 
     /**
@@ -173,6 +198,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         userDialog = new UserDialog();
 
     }
+
 
     /**
      * Check Weather The Ineternet is there or not
@@ -207,11 +233,16 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
      */
     protected void updateDisplay2() {
 
+        //Change the TextView To EditText
         /*UserAdapter adapter = new UserAdapter(this, R.layout.item_flower, userlist);
         listv.setAdapter(adapter);*/
-        tv_Name.setText("");
-        tv_DOB.setText("");
-        tv_CO.setText("");
+        tv_Name.setVisibility(View.GONE);
+        tv_DOB.setVisibility(View.GONE);
+        tv_CO.setVisibility(View.GONE);
+
+        et_Name.setVisibility(View.VISIBLE);
+        et_DOB.setVisibility(View.VISIBLE);
+        et_CO.setVisibility(View.VISIBLE);
 
 
     }
