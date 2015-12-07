@@ -58,7 +58,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         setContentView(R.layout.activity_add);
 
         save = (Button)findViewById(R.id.save);
-       // save.setEnabled(false);
+        save.setEnabled(false);
         bt_Close = (Button)findViewById(R.id.close);
         bt_Verify = (Button)findViewById(R.id.verifyaadhaar);
         bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
@@ -744,6 +744,33 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private void updateUIafterSave() {
 
         //Clear All the Values and remove all the fingure Pint Expressions
+        et_Aadhaar.setText("");
+
+        if(Base64_template1!=null) Base64_template1=null;
+        if(Base64_template2!=null) Base64_template2=null;
+        if(byTemplate1Fingure!=null) byTemplate1Fingure=null;
+        if(byTemplate2Fingure!=null) byTemplate2Fingure=null;
+        if(byCapturedRaw1!=null) byCapturedRaw1=null;
+        if(byCapturedRaw2!=null) byCapturedRaw2=null;
+
+        //Updating ImageViews
+        iv_ImageFingureOne.setImageBitmap(null);
+        iv_ImageFingureTwo.setImageBitmap(null);
+
+        //Check weather TextView is Present or EditText
+        if(tv_Name.getVisibility() == View.VISIBLE && tv_DOB.getVisibility()== View.VISIBLE  && tv_CO.getVisibility() == View.VISIBLE ){
+            tv_Name.setText("");
+            tv_DOB.setText("");
+            tv_CO.setText("");
+        }
+        else if(et_Name.getVisibility() == View.VISIBLE && et_DOB.getVisibility() == View.VISIBLE && et_CO.getVisibility() == View.VISIBLE){
+            et_Name.setText("");
+            et_DOB.setText("");
+            et_CO.setText("");
+        }else{
+            Toast.makeText(AddActivity.this,"Nothing Seems to be working right now",Toast.LENGTH_LONG).show();
+        }
+
 
     }
 }
