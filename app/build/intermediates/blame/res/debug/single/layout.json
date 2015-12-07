@@ -8,12 +8,12 @@
         "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\layout\\activity_report.xml"
     },
     {
-        "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
-        "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\layout\\activity_about_us.xml"
-    },
-    {
         "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add.xml",
         "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\layout\\activity_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
+        "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\layout\\activity_about_us.xml"
     },
     {
         "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_android__demo.xml",

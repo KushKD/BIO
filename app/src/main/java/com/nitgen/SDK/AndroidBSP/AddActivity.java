@@ -28,10 +28,9 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private NBioBSPJNI.Export       exportEngine;
     private NBioBSPJNI.IndexSearch  indexSearch;
     private Button                  bt_Close , bt_Verify , bt_DetectDevice,save;
-    private EditText                et_Aadhaar, et_Name  ,et_CO;
-    private DatePicker              et_DOB;
+    private EditText                et_Aadhaar, et_Name  ,et_CO,et_DOB;
     private TextView                tv_Name, tv_DOB , tv_CO , tv_Status;
-    private List<UserPojo>          userlist;
+    public List<UserPojo>          userlist;
 
     private byte[]					byTemplate1Fingure;  //Fingure 1
     private byte[]					byTemplate2Fingure;  //Fingure 2
@@ -59,7 +58,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         setContentView(R.layout.activity_add);
 
         save = (Button)findViewById(R.id.save);
-        save.setEnabled(false);
+       // save.setEnabled(false);
         bt_Close = (Button)findViewById(R.id.close);
         bt_Verify = (Button)findViewById(R.id.verifyaadhaar);
         bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
@@ -71,7 +70,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         iv_ImageFingureOne = (ImageView)findViewById(R.id.imagefingureone);
         iv_ImageFingureTwo = (ImageView)findViewById(R.id.imagefinguretwo);
         et_Name = (EditText)findViewById(R.id.etname);
-        et_DOB = (DatePicker)findViewById(R.id.etdob);
+        et_DOB = (EditText)findViewById(R.id.etdob);
         et_CO = (EditText)findViewById(R.id.etco);
 
 
@@ -132,6 +131,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
                 if (VerifyAadhaar.length() != 0) {
                     if (VerifyAadhaar.length() == 12) {
 
+
                         if (isOnline()) {
                             //Start Async Task
                             String Service_Aadhaar = VerifyAadhaar;
@@ -159,16 +159,78 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                //Check Weather the Data is not null
-                 //name
-                 //DOB
-                //Care Off
-                //Fingure 1
-                //Fingure 2
-                //Aadhaar No
+                    String Name_Save, DOB_Save, CO_Save, Aadhaar_Save;
+                    String Fingure_One, Fingure_Two;
+
+                    //Check Weather the textview is enabled or not
+                    if (tv_Name.getVisibility() == View.VISIBLE && tv_DOB.getVisibility() == View.VISIBLE && tv_CO.getVisibility() == View.VISIBLE) {
+
+                        // If all the textviews are present get data from textviews
+                        Name_Save = tv_Name.getText().toString().trim();
+                        DOB_Save = tv_DOB.getText().toString().trim();
+                        CO_Save = tv_CO.getText().toString().trim();
+                        Aadhaar_Save = et_Aadhaar.getText().toString().trim();
+                        Fingure_One = Base64_template1;
+                        Fingure_Two = Base64_template2;
+
+                        if (!Name_Save.isEmpty() && Name_Save != null && !DOB_Save.isEmpty() && DOB_Save != null && !CO_Save.isEmpty() && CO_Save != null) {
+                            // Toast.makeText(getApplicationContext(),"Creating an Object", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(),Name_Save + DOB_Save + CO_Save + Aadhaar_Save, Toast.LENGTH_LONG).show();
+                            CreateObject(Name_Save, CO_Save, DOB_Save, Aadhaar_Save, Fingure_One, Fingure_Two);
+
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Data is Incomplete", Toast.LENGTH_LONG).show();
+                        }
+
+
+                    } else if (et_Name.getVisibility() == View.VISIBLE && et_DOB.getVisibility() == View.VISIBLE && et_CO.getVisibility() == View.VISIBLE) {
+                        //If all the editText are visible get data from editText
+                        Name_Save = et_Name.getText().toString().trim();
+                        DOB_Save = et_DOB.getText().toString().trim();
+                        CO_Save = et_CO.getText().toString().trim();
+                        Aadhaar_Save = et_Aadhaar.getText().toString().trim();
+                        Fingure_One = Base64_template1;
+                        Fingure_Two = Base64_template2;
+
+                        if (!Name_Save.isEmpty() && Name_Save != null && !DOB_Save.isEmpty() && DOB_Save != null && !CO_Save.isEmpty() && CO_Save != null) {
+                            // Toast.makeText(getApplicationContext(),"Creating an Object", Toast.LENGTH_LONG).show();
+                            //  Toast.makeText(getApplicationContext(),Name_Save + DOB_Save + CO_Save +  Aadhaar_Save , Toast.LENGTH_LONG).show();
+                            CreateObject(Name_Save, CO_Save, DOB_Save, Aadhaar_Save, Fingure_One, Fingure_Two);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Data is Incomplete", Toast.LENGTH_LONG).show();
+                        }
+
+
+                    } else {
+                        //Something Went Wrong
+                        Toast.makeText(getApplicationContext(), "Something Went Wrong . Checking the Issue..", Toast.LENGTH_LONG).show();
+                    }
+
+
+
+
 
             }
         });
+
+    }
+
+    private void CreateObject(String name_save, String co_save, String dob_save, String aadhaar_save, String fingure_one, String fingure_two) {
+
+        //CReating the Object
+        POJO_User_Save PUS = new POJO_User_Save();
+        PUS.setName_Save_User(name_save);
+        PUS.setCO_Save_User(co_save);
+        PUS.setDOB_Save_User(dob_save);
+        PUS.setAadhaar_Save_User(aadhaar_save);
+        PUS.setFingure_One_User(fingure_one);
+        PUS.setFingure_Two_User(fingure_two);
+
+         //Start Async Task To Save The Data To DataBase
+        SaveData SD = new SaveData();
+        SD.execute(PUS);
+
 
     }
 
@@ -221,9 +283,20 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
         /*UserAdapter adapter = new UserAdapter(this, R.layout.item_flower, userlist);
         listv.setAdapter(adapter);*/
-        tv_Name.setText(userlist.get(0).getResident_Name_user());
-        tv_DOB.setText(userlist.get(0).getDOB_user());
-        tv_CO.setText(userlist.get(0).getCare_OFF_User());
+        if(tv_Name.getVisibility() == View.VISIBLE){
+            tv_Name.setText(userlist.get(0).getResident_Name_user());
+            tv_DOB.setText(userlist.get(0).getDOB_user());
+            tv_CO.setText(userlist.get(0).getCare_OFF_User());
+        }
+        if(tv_Name.getVisibility() == View.GONE){
+            tv_Name.setVisibility(View.VISIBLE);
+            tv_DOB.setVisibility(View.VISIBLE);
+            tv_CO.setVisibility(View.VISIBLE);
+            tv_Name.setText(userlist.get(0).getResident_Name_user());
+            tv_DOB.setText(userlist.get(0).getDOB_user());
+            tv_CO.setText(userlist.get(0).getCare_OFF_User());
+        }
+
 
 
     }
@@ -243,6 +316,14 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         et_Name.setVisibility(View.VISIBLE);
         et_DOB.setVisibility(View.VISIBLE);
         et_CO.setVisibility(View.VISIBLE);
+
+        if(et_Name.getText().toString()!=null && et_DOB.getText().toString()!=null && et_CO.getText().toString()!=null){
+            et_Name.setText("");
+            et_DOB.setText("");
+            et_CO.setText("");
+        }else{
+            Toast.makeText(getApplicationContext(),"Everything is empty",Toast.LENGTH_LONG).show();
+        }
 
 
     }
@@ -564,11 +645,13 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     /**
      * Verify User Async
      */
-    class VerifyUser extends AsyncTask<String,String,String>{
+    class VerifyUser extends AsyncTask<String,String,String> {
 
         private ProgressDialog dialog;
         String SendAadhaar = null;
         String url = null;
+
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -580,13 +663,15 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
         @Override
         protected String doInBackground(String... params) {
-           SendAadhaar = params[0];
+            SendAadhaar = params[0];
             StringBuilder sb_search = new StringBuilder();
-            sb_search.append(EConstants.URLAAdhaarVerify);sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(EConstants.methord_SearchAadaar);sb_search.append(EConstants.url_Delemetre);
-            sb_search.append( SendAadhaar );
+            sb_search.append(EConstants.URLAAdhaarVerify);
+            sb_search.append(EConstants.url_Delemetre);
+            sb_search.append(EConstants.methord_SearchAadaar);
+            sb_search.append(EConstants.url_Delemetre);
+            sb_search.append(SendAadhaar);
             url = sb_search.toString();
-            Log.d("URL",url);
+            Log.d("URL", url);
             String content = HttpManager.getData(url);
             return content;
         }
@@ -595,7 +680,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         protected void onPostExecute(String content) {
             super.onPostExecute(content);
             this.dialog.dismiss();
-           Log.d("Content", content);
+            Log.d("Content", content);
 
             try {
                 userlist = UserJson_UID.parseFeed(content);
@@ -611,11 +696,57 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
                 } else {
                     Toast.makeText(getApplicationContext(), EConstants.ErrorMessageUnknow, Toast.LENGTH_LONG).show();
                 }
-            }catch (Exception e){
-                Toast.makeText(getApplicationContext(), e.getLocalizedMessage().toString() , Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
             }
 
         }
+
     }
 
+    class SaveData extends AsyncTask<POJO_User_Save,String,String>{
+
+        Boolean SavedFlag = false;
+        private ProgressDialog dialog_save;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog_save = new ProgressDialog(AddActivity.this);
+            this.dialog_save.setMessage("Saving user please wait.");
+            this.dialog_save.show();
+            this.dialog_save.setCancelable(false);
+        }
+
+        @Override
+        protected String doInBackground(POJO_User_Save... params) {
+
+            DatabaseHandler DH = new DatabaseHandler(AddActivity.this);
+            SavedFlag = DH.addContact(params[0]);
+
+            if(SavedFlag){
+                return "User Added Successfully";
+            }else{
+                return "User Not Added. Please try again.";
+            }
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            this.dialog_save.dismiss();
+            Toast.makeText(AddActivity.this,s,Toast.LENGTH_LONG).show();
+            updateUIafterSave();
+        }
+    }
+
+    private void updateUIafterSave() {
+
+        //Clear All the Values and remove all the fingure Pint Expressions
+
+    }
 }
+
+
+

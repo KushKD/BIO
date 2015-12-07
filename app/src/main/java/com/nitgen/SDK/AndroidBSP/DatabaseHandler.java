@@ -30,19 +30,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Attendance";
 
     // Contacts table name
-    private static final String TABLE_REPORTING = "FingerPrintDetails";
+    private static final String TABLE_USERDETAILS = "UserDetails";
 
-    // Contacts Table Columns names
 
+    //User Details Columns
     private static final String KEY_ID = "id";
-    private static final String FINGER = "FingerString";
-    /*
-    private static final String ANGANWARI_NAME = "name";
-    private static final String KEY_PH_NO = "phone_number";
-    private static final String TOTAL_ENROLLMENTS = "total_enrollments";
-    private static final String ISSUESnFEEDBACKS = "issuesNfeedbacks";
-    private static final String DATE = "date";
-    private static final String DEVICE_ID = "device_id";*/
+    private static final String FINGER_ONE = "FingerOne";
+    private static final String FINGER_TWO = "FingerTwo";
+    private static final String AADHAAR = "Aadhaar";
+    private static final String NAME = "Name";
+    private static final String CAREOFF = "CareOFf";
+    private static final String DOB = "DOB";
+
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -51,17 +50,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_REPORTING + "("
+        String CREATE_USERDATA_TABLE = "CREATE TABLE " + TABLE_USERDETAILS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
-                + FINGER + " TEXT" + ")";
-        db.execSQL(CREATE_CONTACTS_TABLE);
+                +FINGER_ONE+" TEXT,"
+                +FINGER_TWO+" TEXT,"
+                +AADHAAR+" TEXT,"
+                +NAME+" TEXT,"
+                +CAREOFF+" TEXT,"
+                + DOB + " TEXT" + ")";
+        db.execSQL(CREATE_USERDATA_TABLE);
     }
 
     // Upgrading database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_REPORTING);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERDETAILS);
 
         // Create tables again
         onCreate(db);
@@ -71,14 +75,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * All CRUD(Create, Read, Update, Delete) Operations
      */
 
-    void addContact(String finger ) {
+    Boolean addContact(POJO_User_Save Details ) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(FINGER, finger); // Fingure String
-
+        values.put(FINGER_ONE, Details.getFingure_One_User()); // Fingure String
+        values.put(FINGER_TWO, Details.getFingure_Two_User());
+        values.put(AADHAAR, Details.getAadhaar_Save_User());
+        values.put(NAME, Details.getName_Save_User());
+        values.put(CAREOFF, Details.getCO_Save_User());
+        values.put(DOB, Details.getDOB_Save_User());
         // Inserting Row
-        db.insert(TABLE_REPORTING, null, values);
+        db.insert(TABLE_USERDETAILS, null, values);
         db.close(); // Closing database connection
 
         try{
@@ -86,6 +94,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }catch (Exception e){
             Log.d("Got Error ..",e.getLocalizedMessage());
         }
+        return true;
     }
 
     // Adding new contact
@@ -114,7 +123,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }*/
 
     // Getting All Contacts
-    public List<FingurePoJo> getAllContacts() {
+  /*  public List<FingurePoJo> getAllContacts() {
         List<FingurePoJo> FingureList = new ArrayList<FingurePoJo>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_REPORTING;
@@ -134,7 +143,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         // return contact list
         return FingureList;
-    }
+    }*/
 
     // Updating single contact
   /*  public int updateContact(Contact contact) {
@@ -157,7 +166,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     // Getting contacts Count
-    public int getContactsCount() {
+ /*   public int getContactsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_REPORTING;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
@@ -166,7 +175,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
         return count;
-    }
+    }*/
 
     public void exportDatabse(String databaseName) {
         try {

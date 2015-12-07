@@ -121,7 +121,7 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
 				//Database base 64 string
 				try {
 					DatabaseHandler db = new DatabaseHandler(Android_Demo.this);
-					db.addContact(Base64_template1);
+					//db.addContact(Base64_template1);
 					Toast.makeText(Android_Demo.this, "Data Saved Locally with string Length" + Base64_template1.length(), Toast.LENGTH_LONG).show();
 				} catch (Exception e) {
 					Toast.makeText(Android_Demo.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
@@ -135,8 +135,8 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
 			public void onClick(View v) {
 				DatabaseHandler db1 = new DatabaseHandler(Android_Demo.this);
 
-				int c = db1.getContactsCount();
-				Toast.makeText(Android_Demo.this, Integer.toString(c), Toast.LENGTH_LONG).show();
+				//int c = db1.getContactsCount();
+				//Toast.makeText(Android_Demo.this, Integer.toString(c), Toast.LENGTH_LONG).show();
 			}
 		});
 
@@ -148,7 +148,7 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
 				Log.d("We Are Here" , "Nothing");
 				DatabaseHandler d = new DatabaseHandler(Android_Demo.this);
 				Log.d("We Are Here" , "Nothing 2");
-				FingureList1 = d.getAllContacts();
+				//FingureList1 = d.getAllContacts();
 				Log.d("We Are Here" , "Nothing3");
 
 				for (int i=0; i<FingureList1.size();i++){
