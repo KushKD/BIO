@@ -378,7 +378,7 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
         btnVerifyRaw.setEnabled(false);
 		
 	}
-	
+
 	public void OnDisConnected(){
 		
 		NBioBSPJNI.CURRENT_PRODUCT_ID = 0;

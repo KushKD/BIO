@@ -98,6 +98,7 @@
                     android:layout_weight="1">
                     
                     <ImageView
+                        android:id="@+id/imagefingerverify"
                         android:layout_width="170dp"
                         android:layout_height="170dp"
                         android:background="@drawable/ic_launcher"/>

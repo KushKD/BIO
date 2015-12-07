@@ -80,6 +80,10 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
         bt_Close.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                NBioBSPJNI.CURRENT_PRODUCT_ID = 0;
+
+                if(sampleDialogFragment!=null)
+                    sampleDialogFragment.dismiss();
                 AddActivity.this.finish();
             }
         });

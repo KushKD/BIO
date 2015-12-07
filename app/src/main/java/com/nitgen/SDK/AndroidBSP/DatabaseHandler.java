@@ -31,6 +31,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Contacts table name
     private static final String TABLE_USERDETAILS = "UserDetails";
+    private static final String TABLE_ATTENDANCEDETAILS = "AttendanceDetails";
 
 
     //User Details Columns
@@ -41,6 +42,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String NAME = "Name";
     private static final String CAREOFF = "CareOFf";
     private static final String DOB = "DOB";
+
+    //Attendance Details Columns
+    private static final String ATTENDANCE_ID = "id";
+    private static final String AADHAAR_Attendance = "UserAadhaar";
+    private static final String DATETIME = "Date_Time";
+    private static final String NAME_ATTENDANCE = "Name_Attendance";
+    private static final String FLAGSYNC = "Flag_Sync";
+
 
 
     public DatabaseHandler(Context context) {
@@ -58,7 +67,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 +NAME+" TEXT,"
                 +CAREOFF+" TEXT,"
                 + DOB + " TEXT" + ")";
+
+        //Create Second Table
+        String CREATE_AADHAARATTENDANCEDETAILS_TABLE = "CREATE TABLE " + TABLE_ATTENDANCEDETAILS + "("
+                + ATTENDANCE_ID + " INTEGER PRIMARY KEY,"
+                +AADHAAR_Attendance+" TEXT,"
+                +DATETIME+" TEXT,"
+                +NAME_ATTENDANCE+" TEXT,"
+                + FLAGSYNC + " TEXT" + ")";
+
+
         db.execSQL(CREATE_USERDATA_TABLE);
+        db.execSQL(CREATE_AADHAARATTENDANCEDETAILS_TABLE);
     }
 
     // Upgrading database
