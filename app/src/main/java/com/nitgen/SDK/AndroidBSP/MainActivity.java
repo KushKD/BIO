@@ -51,6 +51,8 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
     private boolean					bCapturedFirst, bAutoOn = false;
     public static final int QUALITY_LIMIT = 80;
+    public Boolean flag_db_TableOneSearch = false;
+    public Boolean flag_db_TableTwoSearch = false;
 
 
 
@@ -220,7 +222,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
             public void onClick(View v) {
 
 
-                Toast.makeText(getApplication(),"Clicked Here" , Toast.LENGTH_LONG).show();
+
 
                 sampleDialogFragment.show(getFragmentManager(), "DIALOG_TYPE_PROGRESS");
                 sampleDialogFragment.setCancelable(false);
@@ -333,8 +335,12 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 //Verification Goes Here
                 //Base64_templateVerify is the fingure that is placed on the machine
                  //Start ASYNC TASK
-                VerifyFinger VF = new VerifyFinger();
-                VF.execute(Base64_templateVerify);
+                if(Base64_templateVerify!=null) {
+                    VerifyFinger VF = new VerifyFinger();
+                    VF.execute(Base64_templateVerify);
+                }else{
+                    msg="String Empty";
+                }
 
             }
 
@@ -624,6 +630,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
             hLoadFIR2.dispose();
         }else{
             msg = "Can not find captured data";
+            return false;
         }
 
         //tvInfo.setText(msg);
@@ -703,6 +710,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
             hLoadFIR2.dispose();
         }else{
             msg = "Can not find captured data";
+            return false;
         }
 
         //tvInfo.setText(msg);
@@ -712,17 +720,17 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     public class  VerifyFinger extends AsyncTask<String,String,String>{
         ArrayList<HashMap<String,String>> listDB = new ArrayList<HashMap<String,String>>();
         DatabaseHandler DH_VERIFY_DB = new DatabaseHandler(getApplicationContext());
-        public Boolean flag_db_TableOneSearch = false;
-        public Boolean flag_db_TableTwoSearch = false;
+        public String message= null;
+
         private ProgressDialog dialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = new ProgressDialog(MainActivity.this);
+           /* dialog = new ProgressDialog(MainActivity.this);
             this.dialog.setMessage(EConstants.ProgressDialog_Message);
             this.dialog.show();
-            this.dialog.setCancelable(false);
+            this.dialog.setCancelable(false);*/
 
         }
 
@@ -731,6 +739,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
             String PlacedFingure = params[0];
             listDB = DH_VERIFY_DB.GetAllData();
+
 
             if(listDB.size()!= 0){
 
@@ -750,30 +759,29 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 flag_db_TableOneSearch = Verify_DB_TableONE(DBFingureONE);
                 flag_db_TableTwoSearch = Verify_DB_TableTWO(DBFingureTWO);
 
-                if(flag_db_TableOneSearch == true || flag_db_TableTwoSearch == true){
-                   // tvInfo.setText("GOT IT");
+                if(flag_db_TableTwoSearch == true || flag_db_TableOneSearch == true ){
+                    message = "Matched";
                     break;
 
-                }if(flag_db_TableOneSearch == true || flag_db_TableTwoSearch == false){
-                    break;
-                }if(flag_db_TableOneSearch == false || flag_db_TableTwoSearch == true){
-                    break;
-                }if(flag_db_TableOneSearch == false || flag_db_TableTwoSearch == false){
-                    return "Not Matched";
+                }else{
+                    continue;
                 }
 
             }
             }else{
-                return "There is No Data in the Database.Please Add the USer";
+                message = "There is No Data in the Database.Please Add the User";
             }
-          return "Matched";
+            if(message==null){
+                message="User Not Registered";
+            }
+          return message;
 
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            dialog.dismiss();
+            //dialog.dismiss();
             Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
 
         }
