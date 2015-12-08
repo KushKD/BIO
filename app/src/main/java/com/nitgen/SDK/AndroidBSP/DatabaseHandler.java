@@ -13,7 +13,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by kuush on 12/2/2015.
@@ -21,17 +23,29 @@ import java.util.List;
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     boolean bool = false;
+    static final ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
+
+    //Dataase Columns HashMap
+    public static final String KEY_ID_DB = "id";
+    public static final String FINGER_ONE_DB = "FingerOne";
+    public static final String FINGER_TWO_DB = "FingerTwo";
+    public static final String AADHAAR_DB = "Aadhaar";
+    public static final String NAME_DB = "Name";
+    public static final String CAREOFF_DB = "CareOFf";
+    public static final String DOB_DB = "DOB";
+
 
     // All Static variables
     // Database Version
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "Attendance";
+    private static final String DATABASE_NAME = "fingure";
 
     // Contacts table name
     private static final String TABLE_USERDETAILS = "UserDetails";
     private static final String TABLE_ATTENDANCEDETAILS = "AttendanceDetails";
+
 
 
     //User Details Columns
@@ -117,6 +131,62 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return true;
     }
 
+
+    // Getting the Complete Database in a List
+    public ArrayList<HashMap<String, String>> GetAllData(){
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_USERDETAILS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        while(cursor.moveToNext()){
+            HashMap<String,String> temp = new HashMap<String, String>();
+            Log.d(KEY_ID_DB, cursor.getString(0));
+            temp.put(KEY_ID_DB, cursor.getString(0));
+            temp.put(FINGER_ONE_DB, cursor.getString(1));
+            temp.put(FINGER_TWO_DB,cursor.getString(2));
+            temp.put(AADHAAR_DB,cursor.getString(3));
+            temp.put(NAME_DB,cursor.getString(4));
+            temp.put(CAREOFF_DB,cursor.getString(5));
+            temp.put(DOB_DB,cursor.getString(6));
+            list.add(temp);
+        }
+        return list;
+
+    }
+
+
+    // Getting contacts Count
+    public int getContactsCount() {
+        String countQuery = "SELECT  * FROM " + TABLE_USERDETAILS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        return count;
+    }
+
+    // Updating single contact
+  /*  public int updateContact(Contact contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, contact.getName());
+        values.put(KEY_PH_NO, contact.getPhoneNumber());
+        // updating row
+        return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
+                new String[] { String.valueOf(contact.getID()) });
+    }*/
+
+    // Deleting single contact
+  /*  public void deleteContact(Contact contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
+                new String[] { String.valueOf(contact.getID()) });
+        db.close();
+    }*/
+
     // Adding new contact
    /* void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -165,37 +235,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return FingureList;
     }*/
 
-    // Updating single contact
-  /*  public int updateContact(Contact contact) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_NAME, contact.getName());
-        values.put(KEY_PH_NO, contact.getPhoneNumber());
-        // updating row
-        return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
-    }*/
-
-    // Deleting single contact
-  /*  public void deleteContact(Contact contact) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
-        db.close();
-    }*/
-
-
-    // Getting contacts Count
- /*   public int getContactsCount() {
-        String countQuery = "SELECT  * FROM " + TABLE_REPORTING;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        int count = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        return count;
-    }*/
 
     public void exportDatabse(String databaseName) {
         try {

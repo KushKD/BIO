@@ -2,8 +2,10 @@ package com.nitgen.SDK.AndroidBSP;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.InputFilter;
@@ -18,9 +20,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
 
-    Button bt_Add , bt_Delete, bt_Close , bt_Report , bt_Aboutus;
+    Button bt_Add , bt_Delete, bt_Close , bt_Report , bt_Aboutus , bt_countUsers, bt_hash;
     private static final String PASSWORD_ADMIN = "password";
     ImageView iv_VerifyFinger;
 
@@ -31,6 +36,11 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     private NBioBSPJNI.IndexSearch  indexSearch;
 
     private byte[]					byTemplate1;
+
+    //DB Fingures
+    private byte[]					byTemplateFingure1_DB;
+    private byte[]					byTemplateFingure2_DB;
+
     private byte[]					byCapturedRaw1;
     private int						nCapturedRawWidth1;
     private int						nCapturedRawHeight1;
@@ -43,6 +53,8 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     public static final int QUALITY_LIMIT = 80;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +65,16 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         bt_Close = (Button)findViewById(R.id.closemain);
         bt_Report = (Button)findViewById(R.id.report);
         bt_Aboutus = (Button)findViewById(R.id.aboutus);
+        bt_countUsers = (Button)findViewById(R.id.countusers);
         iv_VerifyFinger = (ImageView)findViewById(R.id.imagefingerverify);
+        bt_hash =(Button)findViewById(R.id.hash);
 
+
+        //getList__();
         initData();
         sampleDialogFragment.show(getFragmentManager(), "DIALOG_TYPE_PROGRESS");
         bsp.OpenDevice();
+
 
 
 
@@ -68,6 +85,17 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 startActivity(iadd);
             }
         });
+
+
+        //Count Users
+        bt_countUsers.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                DatabaseHandler DH_Count = new DatabaseHandler(MainActivity.this);
+                int USERS = DH_Count.getContactsCount();
+                Toast.makeText(MainActivity.this, "Total No.Of Users :-"+Integer.toString(USERS), Toast.LENGTH_LONG).show();
+            }
+        });
+
 
 
         /**
@@ -217,6 +245,33 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
     }
 
+   /* private void getList__() {
+        DatabaseHandler DH = new DatabaseHandler(MainActivity.this);
+        listDB = DH.GetAllData();
+
+        if(listDB.size()!=0){
+            Toast.makeText(MainActivity.this,"Ready For Loop",Toast.LENGTH_LONG).show();
+
+            for(int i=0; i<listDB.size();i++){
+                String Aashaar = listDB.get(i).get(DatabaseHandler.AADHAAR_DB);
+                Log.d("Aadhaar",Aashaar);
+                String FingerTwo = listDB.get(i).get(DatabaseHandler.FINGER_TWO_DB);
+                Log.d("FingerTwo",FingerTwo);
+                String FingureOne = listDB.get(i).get(DatabaseHandler.FINGER_ONE_DB);
+                Log.d("Fingure One",FingureOne);
+                String Name = listDB.get(i).get(DatabaseHandler.NAME_DB);
+                Log.d("Name",Name);
+                String CareOFf = listDB.get(i).get(DatabaseHandler.CAREOFF_DB);
+                Log.d("CareOFf",CareOFf);
+                String DOB = listDB.get(i).get(DatabaseHandler.DOB_DB);
+                Log.d("DOB",DOB);
+            }
+
+        }else{
+            Toast.makeText(MainActivity.this,"List is Empty",Toast.LENGTH_LONG).show();
+        }
+    }*/
+
     /**
      * Captured One Button (Fingure)
      */
@@ -276,6 +331,10 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 Base64_templateVerify  = Base64.encodeToString(byTemplate1, Base64.DEFAULT);
 
                 //Verification Goes Here
+                //Base64_templateVerify is the fingure that is placed on the machine
+                 //Start ASYNC TASK
+                VerifyFinger VF = new VerifyFinger();
+                VF.execute(Base64_templateVerify);
 
             }
 
@@ -491,6 +550,233 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
             //  OnRemoveUser(id);
         }
 
+    }
+
+    private Boolean Verify_DB_TableONE(byte[] dbFingureOne) {
+
+
+        String msg = "";
+
+        byte [] VerifyFingure = Base64.decode(Base64_templateVerify,Base64.DEFAULT);
+
+
+        byTemplate1 = VerifyFingure;
+        byTemplateFingure1_DB  = dbFingureOne;
+
+
+        if (byTemplate1 != null && byTemplateFingure1_DB != null )  {
+            NBioBSPJNI.FIR_HANDLE hLoadFIR1, hLoadFIR2 ;
+
+            {
+                hLoadFIR1 = bsp.new FIR_HANDLE();
+
+                exportEngine.ImportFIR(byTemplate1, byTemplate1.length, NBioBSPJNI.EXPORT_MINCONV_TYPE.OLD_FDA, hLoadFIR1);
+
+                if (bsp.IsErrorOccured())  {
+                    msg = "Template NBioBSP ImportFIR Error: " + bsp.GetErrorCode();
+                    //tvInfo.setText(msg);
+                    return false ;
+                }
+            }
+
+            {
+                hLoadFIR2 = bsp.new FIR_HANDLE();
+
+                exportEngine.ImportFIR(byTemplateFingure1_DB, byTemplateFingure1_DB.length, NBioBSPJNI.EXPORT_MINCONV_TYPE.OLD_FDA, hLoadFIR2);
+
+                if (bsp.IsErrorOccured())  {
+                    hLoadFIR1.dispose();
+                    msg = "Template NBioBSP ImportFIR Error: " + bsp.GetErrorCode();
+                    //tvInfo.setText(msg);
+                    return false ;
+                }
+            }
+
+
+
+            // Verify Match
+            NBioBSPJNI.INPUT_FIR inputFIR1, inputFIR2 ;
+            Boolean bResult = new Boolean(false);
+
+            inputFIR1 = bsp.new INPUT_FIR();
+            inputFIR2 = bsp.new INPUT_FIR();
+
+            inputFIR1.SetFIRHandle(hLoadFIR1);
+            inputFIR2.SetFIRHandle(hLoadFIR2);
+
+            bsp.VerifyMatch(inputFIR1, inputFIR2, bResult, null);
+
+            if (bsp.IsErrorOccured())  {
+                msg = "Template NBioBSP Verify Match Error: " + bsp.GetErrorCode();
+            }else  {
+                if (bResult){
+                    msg = "Template VerifyMatch Successed";
+
+                }else{
+                    msg = "Template VerifyMatch Failed";
+                    hLoadFIR1.dispose();
+                    hLoadFIR2.dispose();
+                    return false;
+                }
+            }
+
+            hLoadFIR1.dispose();
+            hLoadFIR2.dispose();
+        }else{
+            msg = "Can not find captured data";
+        }
+
+        //tvInfo.setText(msg);
+        return true;
+    }
+
+    //Verify Table Two
+    private Boolean Verify_DB_TableTWO(byte[] dbFingureTwo) {
+
+
+        String msg = "";
+
+        byte [] VerifyFingure = Base64.decode(Base64_templateVerify,Base64.DEFAULT);
+
+
+        byTemplate1 = VerifyFingure;
+        byTemplateFingure2_DB  = dbFingureTwo;
+
+
+        if (byTemplate1 != null && byTemplateFingure2_DB != null )  {
+            NBioBSPJNI.FIR_HANDLE hLoadFIR1, hLoadFIR2 ;
+
+            {
+                hLoadFIR1 = bsp.new FIR_HANDLE();
+
+                exportEngine.ImportFIR(byTemplate1, byTemplate1.length, NBioBSPJNI.EXPORT_MINCONV_TYPE.OLD_FDA, hLoadFIR1);
+
+                if (bsp.IsErrorOccured())  {
+                    msg = "Template NBioBSP ImportFIR Error: " + bsp.GetErrorCode();
+                    //tvInfo.setText(msg);
+                    return false ;
+                }
+            }
+
+            {
+                hLoadFIR2 = bsp.new FIR_HANDLE();
+
+                exportEngine.ImportFIR(byTemplateFingure2_DB, byTemplateFingure2_DB.length, NBioBSPJNI.EXPORT_MINCONV_TYPE.OLD_FDA, hLoadFIR2);
+
+                if (bsp.IsErrorOccured())  {
+                    hLoadFIR1.dispose();
+                    msg = "Template NBioBSP ImportFIR Error: " + bsp.GetErrorCode();
+                    //tvInfo.setText(msg);
+                    return false ;
+                }
+            }
+
+
+
+            // Verify Match
+            NBioBSPJNI.INPUT_FIR inputFIR1, inputFIR2 ;
+            Boolean bResult = new Boolean(false);
+
+            inputFIR1 = bsp.new INPUT_FIR();
+            inputFIR2 = bsp.new INPUT_FIR();
+
+            inputFIR1.SetFIRHandle(hLoadFIR1);
+            inputFIR2.SetFIRHandle(hLoadFIR2);
+
+            bsp.VerifyMatch(inputFIR1, inputFIR2, bResult, null);
+
+            if (bsp.IsErrorOccured())  {
+                msg = "Template NBioBSP Verify Match Error: " + bsp.GetErrorCode();
+            }else  {
+                if (bResult){
+                    msg = "Template VerifyMatch Successed";
+
+                }else{
+                    msg = "Template VerifyMatch Failed";
+                    hLoadFIR1.dispose();
+                    hLoadFIR2.dispose();
+                    return false;
+                }
+            }
+
+            hLoadFIR1.dispose();
+            hLoadFIR2.dispose();
+        }else{
+            msg = "Can not find captured data";
+        }
+
+        //tvInfo.setText(msg);
+        return true;
+    }
+
+    public class  VerifyFinger extends AsyncTask<String,String,String>{
+        ArrayList<HashMap<String,String>> listDB = new ArrayList<HashMap<String,String>>();
+        DatabaseHandler DH_VERIFY_DB = new DatabaseHandler(getApplicationContext());
+        public Boolean flag_db_TableOneSearch = false;
+        public Boolean flag_db_TableTwoSearch = false;
+        private ProgressDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(MainActivity.this);
+            this.dialog.setMessage(EConstants.ProgressDialog_Message);
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String PlacedFingure = params[0];
+            listDB = DH_VERIFY_DB.GetAllData();
+
+            if(listDB.size()!= 0){
+
+            for (int i=0; i<listDB.size();i++){
+
+                //getting the Fingures From the DB
+                String DB_Base64_Fingure_ONE = listDB.get(i).get(DatabaseHandler.FINGER_ONE_DB);
+                String DB_Base64_Fingure_TWO = listDB.get(i).get(DatabaseHandler.FINGER_TWO_DB);
+
+
+                //Convert it to Byte Array
+                byte [] DBFingureONE = Base64.decode(DB_Base64_Fingure_ONE,Base64.DEFAULT);
+                byte [] DBFingureTWO = Base64.decode(DB_Base64_Fingure_TWO,Base64.DEFAULT);
+
+                //Verify Goes Here
+
+                flag_db_TableOneSearch = Verify_DB_TableONE(DBFingureONE);
+                flag_db_TableTwoSearch = Verify_DB_TableTWO(DBFingureTWO);
+
+                if(flag_db_TableOneSearch == true || flag_db_TableTwoSearch == true){
+                   // tvInfo.setText("GOT IT");
+                    break;
+
+                }if(flag_db_TableOneSearch == true || flag_db_TableTwoSearch == false){
+                    break;
+                }if(flag_db_TableOneSearch == false || flag_db_TableTwoSearch == true){
+                    break;
+                }if(flag_db_TableOneSearch == false || flag_db_TableTwoSearch == false){
+                    return "Not Matched";
+                }
+
+            }
+            }else{
+                return "There is No Data in the Database.Please Add the USer";
+            }
+          return "Matched";
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            dialog.dismiss();
+            Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
+
+        }
     }
 }
 

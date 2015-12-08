@@ -43,9 +43,10 @@
                 android:layout_weight="1">
 
                 <Button
+                    android:id="@+id/hash"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Detect Device"
+                    android:text="Get DB DETAILS"
                     android:gravity="center|center_vertical|center_horizontal"
                     android:textSize="24sp"
                     android:textColor="#000000"
@@ -264,9 +265,10 @@
                        android:orientation="vertical">
 
                        <Button
+                           android:id="@+id/countusers"
                            android:layout_width="match_parent"
                            android:layout_height="match_parent"
-                           android:text="Settings"/>
+                           android:text="GET DB COUNT"/>
                    </LinearLayout>
 
                    <LinearLayout
