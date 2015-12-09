@@ -5,9 +5,11 @@ import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Handler;
 import android.text.InputFilter;
 import android.util.Base64;
 import android.util.Log;
@@ -18,9 +20,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
@@ -28,6 +33,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     Button bt_Add , bt_Delete, bt_Close , bt_Report , bt_Aboutus , bt_countUsers, bt_hash;
     private static final String PASSWORD_ADMIN = "password";
     ImageView iv_VerifyFinger;
+    private Handler  StopCodeForTwoSeconds = new Handler();
 
     private DialogFragment          sampleDialogFragment;
     private UserDialog              userDialog;
@@ -54,6 +60,9 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     public Boolean flag_db_TableOneSearch = false;
     public Boolean flag_db_TableTwoSearch = false;
 
+    private TextView tv_Name , tv_Aadhaar ,tv_Punch_time;
+    private LinearLayout ll_ColorChange;
+
 
 
 
@@ -70,6 +79,12 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         bt_countUsers = (Button)findViewById(R.id.countusers);
         iv_VerifyFinger = (ImageView)findViewById(R.id.imagefingerverify);
         bt_hash =(Button)findViewById(R.id.hash);
+
+        tv_Name = (TextView)findViewById(R.id.tvname);
+        tv_Aadhaar = (TextView)findViewById(R.id.tvaadhaarno);
+        tv_Punch_time = (TextView)findViewById(R.id.tvpunchtime);
+
+        ll_ColorChange = (LinearLayout)findViewById(R.id.l2_colorchange);
 
 
         //getList__();
@@ -760,7 +775,12 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 flag_db_TableTwoSearch = Verify_DB_TableTWO(DBFingureTWO);
 
                 if(flag_db_TableTwoSearch == true || flag_db_TableOneSearch == true ){
-                    message = "Matched";
+                    String name = listDB.get(i).get(DatabaseHandler.NAME_DB);
+                    String Aadhaar = listDB.get(i).get(DatabaseHandler.AADHAAR_DB);
+                    StringBuilder SB = new StringBuilder();
+                    SB.append("Matched:");SB.append(name);SB.append(":");SB.append(Aadhaar);
+
+                    message = SB.toString();
                     break;
 
                 }else{
@@ -781,10 +801,87 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //dialog.dismiss();
-            Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
+
+
+
+
+            if(s.length()<=20){
+
+                update_UI_AfterAttendence_Faliure(s);
+
+            }else{
+              //  Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
+                //Break the String using Delemeter $
+                String[] str_array = s.split(":");
+                String message = str_array[0];
+                String name = str_array[1];
+                String aadhaar = str_array[2];
+              //  Toast.makeText(MainActivity.this,aadhaar ,Toast.LENGTH_LONG).show();
+
+                update_UI_AfterAttendence(name,aadhaar,message);
+            }
+
+
+
+
+
+
+
 
         }
+    }
+
+    private void update_UI_AfterAttendence_Faliure(String s) {
+        ll_ColorChange.setBackgroundColor(Color.RED);
+        tv_Punch_time.setText(s);
+        StopCodeForTwoSeconds.postDelayed(new Runnable() {
+            public void run() {
+                doStufftwo();
+            }
+        }, 3000);
+
+    }
+
+    private void update_UI_AfterAttendence(String name, String aadhaar , String message) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        String currentDateandTime = null;
+
+        currentDateandTime = sdf.format(new Date());
+
+        ll_ColorChange.setBackgroundColor(Color.GREEN);
+        tv_Name.setText(name);
+        tv_Aadhaar.setText(aadhaar);
+        tv_Punch_time.setText(currentDateandTime);
+
+        //Saving Algorithm Goes Here
+
+
+        StopCodeForTwoSeconds.postDelayed(new Runnable() {
+            public void run() {
+                doStuff_Save();
+            }
+        }, 3000);
+    }
+
+    private void doStuff_Save() {
+
+
+        ll_ColorChange.setBackgroundColor(Color.WHITE);
+        tv_Name.setText("");
+        tv_Aadhaar.setText("");
+        tv_Punch_time.setText("");
+        iv_VerifyFinger.setImageBitmap(null);
+
+    }
+
+    private void doStufftwo() {
+        ll_ColorChange.setBackgroundColor(Color.WHITE);
+        tv_Name.setText("");
+        tv_Aadhaar.setText("");
+        tv_Punch_time.setText("");
+        iv_VerifyFinger.setImageBitmap(null);
+
     }
 }
 
