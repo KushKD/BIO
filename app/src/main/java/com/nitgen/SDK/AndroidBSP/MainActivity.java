@@ -855,6 +855,27 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         tv_Punch_time.setText(currentDateandTime);
 
         //Saving Algorithm Goes Here
+        //check weather the textview is not empty
+        SaveAttendanceUser_POJO SAP = null;
+        if(tv_Name.getText().toString().length()!=0 && tv_Aadhaar.getText().toString().length()!=0 && tv_Punch_time.getText().toString().length()!=0)
+        {
+            SAP = new SaveAttendanceUser_POJO();
+            SAP.setName(tv_Name.getText().toString());
+            SAP.setAadhaar(tv_Aadhaar.getText().toString());
+            SAP.setPunchTime(tv_Punch_time.getText().toString());
+            SAP.setSync("false");
+
+             //Start New Async Task
+            SaveAttendance _save_attendance = new SaveAttendance();
+            _save_attendance.execute(SAP);
+
+
+
+
+
+        }else{
+            Toast.makeText(MainActivity.this , "Unable to Save Data" , Toast.LENGTH_LONG).show();
+        }
 
 
         StopCodeForTwoSeconds.postDelayed(new Runnable() {
@@ -882,6 +903,45 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         tv_Punch_time.setText("");
         iv_VerifyFinger.setImageBitmap(null);
 
+    }
+
+    //Save Attendance Async Task
+
+    class SaveAttendance extends AsyncTask<SaveAttendanceUser_POJO,String,String>{
+
+        Boolean SavedFlag = false;
+        private ProgressDialog dialog_save;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog_save = new ProgressDialog(MainActivity.this);
+            this.dialog_save.setMessage("Saving user please wait.");
+            this.dialog_save.show();
+            this.dialog_save.setCancelable(false);
+        }
+
+
+        @Override
+        protected String doInBackground(SaveAttendanceUser_POJO... params) {
+
+            DatabaseHandler DH = new DatabaseHandler(MainActivity.this);
+            SavedFlag = DH.addAttendance(params[0]);
+
+            if(SavedFlag){
+                return "Attendance saving Successfully";
+            }else{
+                return "Something really bad happened while saving the attendance";
+            }
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            this.dialog_save.dismiss();
+            Toast.makeText(MainActivity.this,s.toString(),Toast.LENGTH_LONG).show();
+        }
     }
 }
 

@@ -132,6 +132,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Saving the Attendance
+     * @return
+     */
+    Boolean addAttendance(SaveAttendanceUser_POJO Details_attendance ) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(AADHAAR_Attendance, Details_attendance.getAadhaar());
+        values.put(DATETIME, Details_attendance.getPunchTime());
+        values.put(NAME_ATTENDANCE, Details_attendance.getName());
+        values.put(FLAGSYNC, Details_attendance.getSync());
+
+
+        // Inserting Row
+        db.insert(TABLE_ATTENDANCEDETAILS, null, values);
+        db.close(); // Closing database connection
+
+        try{
+            exportDatabse(DATABASE_NAME);
+        }catch (Exception e){
+            Log.d("Got Error ..",e.getLocalizedMessage());
+        }
+        return true;
+    }
+
+
     // Getting the Complete Database in a List
     public ArrayList<HashMap<String, String>> GetAllData(){
         // Select All Query
