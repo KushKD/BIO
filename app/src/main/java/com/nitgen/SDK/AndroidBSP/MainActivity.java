@@ -929,7 +929,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
             SavedFlag = DH.addAttendance(params[0]);
 
             if(SavedFlag){
-                return "Attendance saving Successfully";
+                return "Attendance marked successfully";
             }else{
                 return "Something really bad happened while saving the attendance";
             }

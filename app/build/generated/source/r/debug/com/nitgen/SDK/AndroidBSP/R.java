@@ -41,6 +41,7 @@ public final class R {
         public static final int ic_launcher=0x7f020017;
     }
     public static final class id {
+        public static final int aadhaar=0x7f090041;
         public static final int aboutus=0x7f09003d;
         public static final int add=0x7f090035;
         public static final int btnAutoOn1=0x7f090025;
@@ -56,6 +57,7 @@ public final class R {
         public static final int closereport=0x7f09003f;
         public static final int count=0x7f09002b;
         public static final int countusers=0x7f09003b;
+        public static final int date_time=0x7f090042;
         public static final int delete=0x7f090037;
         public static final int detectdeviceadd=0x7f090008;
         public static final int et_aadhaar=0x7f09000d;
@@ -90,9 +92,10 @@ public final class R {
         public static final int l3215=0x7f09003c;
         public static final int l3216=0x7f090007;
         public static final int listreport=0x7f090040;
-        public static final int menu_add_fir=0x7f090041;
-        public static final int menu_identify=0x7f090042;
-        public static final int menu_remove=0x7f090043;
+        public static final int menu_add_fir=0x7f090044;
+        public static final int menu_identify=0x7f090045;
+        public static final int menu_remove=0x7f090046;
+        public static final int name=0x7f090043;
         public static final int report=0x7f090039;
         public static final int save=0x7f09001d;
         public static final int textDevice=0x7f09001f;
@@ -116,6 +119,7 @@ public final class R {
         public static final int activity_android__demo=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int activity_report=0x7f030004;
+        public static final int list_row=0x7f030005;
     }
     public static final class menu {
         public static final int activity_android__demo=0x7f080000;

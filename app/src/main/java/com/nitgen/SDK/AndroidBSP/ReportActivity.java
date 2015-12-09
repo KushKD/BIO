@@ -1,59 +1,89 @@
 package com.nitgen.SDK.AndroidBSP;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class ReportActivity extends Activity {
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ReportActivity extends BaseActivity {
 
     Button bt_CloseReport;
+
+    DatabaseHandler DH = null;
+    BinderData bindingData ;
+    ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        bt_CloseReport = (Button)findViewById(R.id.closereport);
+        list = (ListView)findViewById(R.id.listreport);
 
+
+        ReadDB_Details RDBA = new ReadDB_Details();
+        RDBA.execute();
+
+        bt_CloseReport = (Button)findViewById(R.id.closereport);
         bt_CloseReport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ReportActivity.this.finish();
             }
         });
+
+
     }
 
-    //Handling the Other Keys Hardware
-    @Override
+    class ReadDB_Details extends AsyncTask<String,String,String>{
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        ArrayList<HashMap<String,String>> listDB_AttendanceDetails = null;
 
-        if ((keyCode == KeyEvent.KEYCODE_HOME)) {
-            System.out.println("KEYCODE_HOME");
-            return true;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
         }
-        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            System.out.println("KEYCODE_BACK");
-            return true;
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            DH = new DatabaseHandler(ReportActivity.this);
+            listDB_AttendanceDetails = new ArrayList<HashMap<String,String>>();
+            listDB_AttendanceDetails = DH.GetAllData_AttendanceStatus();
+            String Message = null;
+
+            if(listDB_AttendanceDetails.size()!=0){
+
+
+                bindingData = new BinderData(ReportActivity.this,listDB_AttendanceDetails);
+                Message = "List is not empty" + Integer.toString( listDB_AttendanceDetails.size());
+
+
+            }else{
+                Message = "List is  empty";
+            }
+
+
+
+
+
+            return Message;
         }
-        if ((keyCode == KeyEvent.KEYCODE_MENU)) {
-            System.out.println("KEYCODE_MENU");
-            return true;
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            list.setAdapter(bindingData);
+            Toast.makeText(ReportActivity.this,s,Toast.LENGTH_LONG).show();
         }
-        if ((keyCode == KeyEvent.KEYCODE_CAMERA)) {
-            System.out.println("KEYCODE_CAMERA");
-            return true;
-        }
-        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
-            System.out.println("KEYCODE_VOLUME_DOWN");
-            return true;
-        }
-        if ((keyCode == KeyEvent.KEYCODE_VOLUME_UP)) {
-            System.out.println("KEYCODE_VOLUME_UP");
-            return true;
-        }
-        return false;
     }
+
 
 }
