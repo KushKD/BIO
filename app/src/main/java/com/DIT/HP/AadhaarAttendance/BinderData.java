@@ -13,7 +13,7 @@ import java.util.List;
 
 import android.widget.TextView;
 
-import com.nitgen.SDK.AndroidBSP.R;
+import com.DIT.HP.Aadhaar.R;
 
 /**
  * Created by kuush on 12/9/2015.

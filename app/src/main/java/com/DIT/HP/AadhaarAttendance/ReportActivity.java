@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.nitgen.SDK.AndroidBSP.R;
+import com.DIT.HP.Aadhaar.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\kuush\Android SDKs\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_b9c95af65a5e54dfea0dfcd58998043c44c6c764.jar" />
+    </item>
+    <item
+        jar="C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\libs\AndroidNBioBSPJNI.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4fbc25ddba31876b07bec9b3fa4c95546f8a1553">
+        <dex dex="C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\build\intermediates\pre-dexed\debug\AndroidNBioBSPJNI_d68e1787a77f285277b40882a82da09d13538b09.jar" />
+    </item>
+
+</items>

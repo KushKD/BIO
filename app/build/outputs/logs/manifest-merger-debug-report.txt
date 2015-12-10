@@ -4,7 +4,7 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	xmlns:android
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:11-69
 	package
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:3:5-40
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml
 	android:versionName

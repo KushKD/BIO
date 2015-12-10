@@ -11,14 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\dimens.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 90,
-                        "endColumn": 57,
-                        "endOffset": 143
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -30,14 +23,7 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\dimens.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 149,
-                        "endColumn": 55,
-                        "endOffset": 200
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\dimens.xml"
                 }
             },
             {
@@ -45,93 +31,65 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 169,
-                    "endColumn": 48,
-                    "endOffset": 213
+                    "endColumn": 55,
+                    "endOffset": 220
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 19,
-                        "endColumn": 48,
-                        "endOffset": 63
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 218,
+                    "startOffset": 225,
                     "endColumn": 52,
-                    "endOffset": 266
+                    "endOffset": 273
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 69,
-                        "endColumn": 52,
-                        "endOffset": 117
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 271,
+                    "startOffset": 278,
                     "endColumn": 50,
-                    "endOffset": 317
+                    "endOffset": 324
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 123,
-                        "endColumn": 50,
-                        "endOffset": 169
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 322,
+                    "startOffset": 329,
                     "endColumn": 58,
-                    "endOffset": 376
+                    "endOffset": 383
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 308,
-                        "endColumn": 58,
-                        "endOffset": 362
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 381,
-                    "endColumn": 69,
-                    "endOffset": 446
+                    "startOffset": 388,
+                    "endColumn": 75,
+                    "endOffset": 459
                 },
                 "from": {
                     "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 175,
-                        "endColumn": 69,
-                        "endOffset": 240
+                        "startOffset": 182,
+                        "endColumn": 75,
+                        "endOffset": 253
                     }
                 }
             },
@@ -139,57 +97,36 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 451,
+                    "startOffset": 464,
                     "endColumn": 60,
-                    "endOffset": 507
+                    "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 246,
-                        "endColumn": 60,
-                        "endOffset": 302
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 512,
+                    "startOffset": 525,
                     "endColumn": 64,
-                    "endOffset": 572
+                    "endOffset": 585
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 368,
-                        "endColumn": 64,
-                        "endOffset": 428
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 577,
+                    "startOffset": 590,
                     "endColumn": 57,
-                    "endOffset": 630
+                    "endOffset": 643
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\styles.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 19,
-                        "endColumn": 58,
-                        "endOffset": 73
-                    }
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\styles.xml"
                 }
             }
         ]

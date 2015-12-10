@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nitgen.SDK.AndroidBSP.test">
+    package="com.DIT.HP.Aadhaar.test">
 
     <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="17" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.nitgen.SDK.AndroidBSP"
+                     android:targetPackage="com.DIT.HP.Aadhaar"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.nitgen.SDK.AndroidBSP"/>
+                     android:label="Tests for com.DIT.HP.Aadhaar"/>
 </manifest>

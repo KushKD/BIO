@@ -25,7 +25,7 @@ import com.nitgen.SDK.AndroidBSP.NBioBSPJNI;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.CAPTURED_DATA;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.IndexSearch.FP_INFO;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.IndexSearch.SAMPLE_INFO;
-import com.nitgen.SDK.AndroidBSP.R;
+
 import com.DIT.HP.AadhaarAttendance.SampleDialogFragment.SampleDialogListener;
 
 import java.io.BufferedWriter;
@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import com.DIT.HP.Aadhaar.R;
 
 /**
  * Demo App

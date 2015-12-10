@@ -18,7 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI;
-import com.nitgen.SDK.AndroidBSP.R;
+import com.DIT.HP.Aadhaar.R;
+
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.nitgen.SDK.AndroidBSP"
+        applicationId "com.DIT.HP.Aadhaar"
         minSdkVersion 17
         targetSdkVersion 17
         compileOptions {

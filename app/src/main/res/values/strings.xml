@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name">NBioBSPDemo</string>
+    <string name="app_name">Aadhaar Attendance</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_android__demo">Android_Demo</string>
+    <string name="title_activity_android__demo">Aadhaar Attendance</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_add">AddActivity</string>
     <string name="title_activity_report">ReportActivity</string>
