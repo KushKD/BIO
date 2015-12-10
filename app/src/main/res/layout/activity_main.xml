@@ -4,56 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context="com.DIT.HP.AadhaarAttendance.MainActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
 
-        
-        <!-- Laout One Header -->
-        <LinearLayout
-            android:id="@+id/l1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1.5"
-            android:background="#f2f2f2">
-            
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2" >
-                
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" 
-                    android:text="Aadhaar Attendance with Logo"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                
-            </LinearLayout>
+        android:orientation="vertical"
+       >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/hash"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Get DB DETAILS"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
 
-            </LinearLayout>
-        </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place your finger on the device to mark the attendance"
+                android:gravity="center|center_vertical|center_horizontal"
+                android:textSize="24sp"
+                android:layout_marginTop="5dp"
+                android:textColor="#d52736"
+                android:textStyle="bold"/>
+
+
+
 
 
         <!-- Laout One Body -->
@@ -61,27 +37,12 @@
             android:id="@+id/l2_colorchange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="15dp"
             android:orientation="vertical"
             android:layout_weight="0.8"
-            android:background="#f8f8f8">
-            
-            <LinearLayout
-                android:id="@+id/l21"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-                
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Place Your Finger to mark your attendance"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                
-            </LinearLayout>
+            android:background="#e6e6e6">
+
+
 
             <LinearLayout
                 android:id="@+id/l22"
@@ -102,7 +63,7 @@
                         android:id="@+id/imagefingerverify"
                         android:layout_width="170dp"
                         android:layout_height="170dp"
-                        android:background="@drawable/ic_launcher"/>
+                        android:background="#666666"/>
                     
                 </LinearLayout>
 
@@ -123,7 +84,7 @@
                         android:id="@+id/tvname"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center|center_vertical|center_horizontal"
+                        android:gravity="left|center_vertical|center_horizontal"
                         android:textSize="20sp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
@@ -139,7 +100,7 @@
                         android:id="@+id/tvaadhaarno"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center|center_vertical|center_horizontal"
+                        android:gravity="left|center_vertical|center_horizontal"
                         android:textSize="20sp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
@@ -156,7 +117,7 @@
                         android:id="@+id/tvpunchtime"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center|center_vertical|center_horizontal"
+                        android:gravity="left|center_vertical|center_horizontal"
                         android:textSize="20sp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
@@ -176,113 +137,139 @@
         <!-- Laout One Footer -->
         <LinearLayout
             android:id="@+id/l3"
+            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_weight="1.5"
-            android:background="#f0f0f0">
+            android:background="#e6e6e6"
+            android:layout_weight="2.0">
+
+            <!-- 31 -->
             
             <LinearLayout
                 android:id="@+id/l31"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="left|center_horizontal|center_vertical"
                 android:layout_weight="0.7">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Aadhaar Logo"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                
+                    android:layout_margin="10dp"
+                    android:background="@drawable/footer"
+                    android:layout_weight="1"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"></LinearLayout>
+
+
             </LinearLayout>
+
+
+            <!-- 32 -->
 
             <LinearLayout
                 android:id="@+id/l32"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#e6e6e6"
                 android:layout_weight="0.3">
 
                <LinearLayout
                    android:id="@+id/l321"
+                   android:background="#e6e6e6"
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
+                   android:gravity="center|center_vertical|center_horizontal"
                    android:orientation="horizontal">
 
                    <LinearLayout
                    android:id="@+id/l3211"
+                       android:background="#e6e6e6"
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
+                   android:gravity="center|center_vertical|center_horizontal"
                    android:layout_weight="1"
                    android:orientation="vertical">
 
                    <Button
                        android:id="@+id/add"
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:text="Add"/>
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/add"/>
                </LinearLayout>
 
 
                    <LinearLayout
                        android:id="@+id/l3212"
                        android:layout_width="match_parent"
+                       android:background="#e6e6e6"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
+                       android:visibility="visible"
+                       android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
                        <Button
-                           android:id="@+id/delete"
+                           android:id="@+id/hash"
                            android:layout_width="match_parent"
                            android:layout_height="match_parent"
-                           android:text="Delete"/>
+                           android:background="#d52736"
+                           />
                    </LinearLayout>
 
 
                    <LinearLayout
                        android:id="@+id/l3213"
+                       android:background="#e6e6e6"
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
+                       android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
                        <Button
                            android:id="@+id/report"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:text="Report"/>
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/report"/>
                    </LinearLayout>
 
                    <LinearLayout
                        android:id="@+id/l3214"
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
+                       android:background="#e6e6e6"
                        android:layout_weight="1"
+                       android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
                        <Button
                            android:id="@+id/countusers"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:text="GET DB COUNT"/>
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/settings"/>
                    </LinearLayout>
 
                    <LinearLayout
                        android:id="@+id/l3215"
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
+                       android:background="#e6e6e6"
                        android:layout_weight="1"
+                       android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
                        <Button
                            android:id="@+id/aboutus"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:text="About Us"/>
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/aboutus"/>
                    </LinearLayout>
 
                    <LinearLayout
@@ -290,13 +277,15 @@
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
+                       android:background="#e6e6e6"
+                       android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
                        <Button
                            android:id="@+id/closemain"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:text="Close"/>
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/close"/>
                    </LinearLayout>
 
 

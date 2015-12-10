@@ -29,7 +29,7 @@ import java.util.HashMap;
 
 public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
 
-    Button bt_Add , bt_Delete, bt_Close , bt_Report , bt_Aboutus , bt_countUsers, bt_hash;
+    Button bt_Add , bt_Close , bt_Report , bt_Aboutus , bt_countUsers, bt_hash;
     private static final String PASSWORD_ADMIN = "password";
     ImageView iv_VerifyFinger;
     private Handler  StopCodeForTwoSeconds = new Handler();
@@ -71,7 +71,6 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         setContentView(R.layout.activity_main);
 
         bt_Add = (Button)findViewById(R.id.add);
-        bt_Delete = (Button)findViewById(R.id.delete);
         bt_Close = (Button)findViewById(R.id.closemain);
         bt_Report = (Button)findViewById(R.id.report);
         bt_Aboutus = (Button)findViewById(R.id.aboutus);
@@ -144,7 +143,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
          * Delete Functionality
          */
 
-        bt_Delete.setOnClickListener(new View.OnClickListener() {
+       /* bt_Delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
@@ -185,7 +184,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
                 alertDialog.show();
             }
 
-        });
+        });*/
 
 
         /**
@@ -479,6 +478,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
             // Verify Match
             NBioBSPJNI.INPUT_FIR inputFIR1, inputFIR2;
+            Boolean bResult = new Boolean(false);
             Boolean bResult = new Boolean(false);
 
             inputFIR1 = bsp.new INPUT_FIR();
@@ -831,7 +831,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
     }
 
     private void update_UI_AfterAttendence_Faliure(String s) {
-        ll_ColorChange.setBackgroundColor(Color.RED);
+        ll_ColorChange.setBackgroundColor(Color.parseColor("#c1272d"));
         tv_Punch_time.setText(s);
         StopCodeForTwoSeconds.postDelayed(new Runnable() {
             public void run() {
@@ -848,7 +848,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
         currentDateandTime = sdf.format(new Date());
 
-        ll_ColorChange.setBackgroundColor(Color.GREEN);
+        ll_ColorChange.setBackgroundColor(Color.parseColor("#009245"));
         tv_Name.setText(name);
         tv_Aadhaar.setText(aadhaar);
         tv_Punch_time.setText(currentDateandTime);
