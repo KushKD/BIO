@@ -1,4 +1,4 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import java.io.BufferedReader;
 import java.io.IOException;

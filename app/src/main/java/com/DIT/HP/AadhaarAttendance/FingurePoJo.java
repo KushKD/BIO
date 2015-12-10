@@ -1,4 +1,4 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 /**
  * Created by kuush on 12/2/2015.

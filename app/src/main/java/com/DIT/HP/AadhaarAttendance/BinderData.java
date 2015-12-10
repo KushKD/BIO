@@ -1,8 +1,7 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,10 @@ import android.widget.ImageView;
 
 import java.util.HashMap;
 import java.util.List;
-import android.view.View;
+
 import android.widget.TextView;
+
+import com.nitgen.SDK.AndroidBSP.R;
 
 /**
  * Created by kuush on 12/9/2015.

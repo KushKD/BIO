@@ -3,11 +3,10 @@
  * This software is the proprietary information of UNIONCOMMUNITY
  *
  */
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
@@ -22,17 +21,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nitgen.SDK.AndroidBSP.NBioBSPJNI;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.CAPTURED_DATA;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.IndexSearch.FP_INFO;
 import com.nitgen.SDK.AndroidBSP.NBioBSPJNI.IndexSearch.SAMPLE_INFO;
-import com.nitgen.SDK.AndroidBSP.SampleDialogFragment.SampleDialogListener;
-import com.nitgen.SDK.AndroidBSP.UserDialog.UserDialogListener;
+import com.nitgen.SDK.AndroidBSP.R;
+import com.DIT.HP.AadhaarAttendance.SampleDialogFragment.SampleDialogListener;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -52,7 +51,7 @@ import java.util.List;
  *@edit content :
  *-------------------------------------------------
  */
-public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogListener, UserDialogListener{
+public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogListener, UserDialog.UserDialogListener {
 	
 	private static final String TAG = Android_Demo.class.getSimpleName();
 	
@@ -353,7 +352,7 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
     }
     
 	/* (non-Javadoc)
-	 * @see com.nitgen.SDK.AndroidBSP.SampleDialogFragment.SampleDialogListener#onClickStopBtn(android.app.DialogFragment)
+	 * @see SampleDialogFragment.SampleDialogListener#onClickStopBtn(android.app.DialogFragment)
 	 */
 	public void onClickStopBtn(DialogFragment dialogFragment) {
 
@@ -1048,7 +1047,7 @@ public class Android_Demo extends Activity implements NBioBSPJNI.CAPTURE_CALLBAC
 	}
 
 	/* (non-Javadoc)
-	 * @see com.nitgen.SDK.AndroidBSP.UserDialog.UserDialogListener#onClickPositiveBtn(android.app.DialogFragment, java.lang.String)
+	 * @see UserDialog.UserDialogListener#onClickPositiveBtn(android.app.DialogFragment, java.lang.String)
 	 */
 	public void onClickPositiveBtn(DialogFragment dialogFragment, String id) {
 

@@ -1,4 +1,4 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,8 +14,6 @@ import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by kuush on 12/2/2015.

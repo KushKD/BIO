@@ -23,7 +23,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.DIT.HP.AadhaarAttendance.MainActivity"
             android:label="@string/title_activity_android__demo"
             android:launchMode="singleTop"
             android:screenOrientation="landscape">
@@ -41,19 +41,19 @@
                 android:resource="@xml/device_filter_nitgen" />
         </activity>
         <activity
-            android:name=".Android_Demo"
+            android:name="com.DIT.HP.AadhaarAttendance.Android_Demo"
             android:label="@string/title_activity_main"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".AddActivity"
+            android:name="com.DIT.HP.AadhaarAttendance.AddActivity"
             android:label="@string/title_activity_add"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".ReportActivity"
+            android:name="com.DIT.HP.AadhaarAttendance.ReportActivity"
             android:label="@string/title_activity_report"
             android:screenOrientation="landscape"/>
 
-        <activity android:name=".AboutUsActivity"
+        <activity android:name="com.DIT.HP.AadhaarAttendance.AboutUsActivity"
                   android:screenOrientation="landscape"></activity>
     </application>
 

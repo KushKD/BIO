@@ -3,7 +3,7 @@
  * This software is the proprietary information of UNIONCOMMUNITY
  *
  */
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.Activity;
 import android.app.AlertDialog;

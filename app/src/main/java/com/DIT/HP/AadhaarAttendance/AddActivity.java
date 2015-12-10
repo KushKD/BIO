@@ -1,4 +1,4 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
@@ -8,17 +8,17 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.DeadObjectException;
 import android.util.Base64;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nitgen.SDK.AndroidBSP.NBioBSPJNI;
+import com.nitgen.SDK.AndroidBSP.R;
 
 import java.util.List;
 

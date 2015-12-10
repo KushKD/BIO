@@ -1,29 +1,17 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.Activity;
-import android.os.Bundle;
+import android.content.Intent;
+import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
 
-public class AboutUsActivity extends Activity {
+/**
+ * Created by kuush on 12/7/2015.
+ */
+public class BaseActivity extends Activity {
 
-    Button bt_Close;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
 
-        bt_Close = (Button)findViewById(R.id.closeaboutus);
-
-        bt_Close.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                AboutUsActivity.this.finish();
-            }
-        });
-
-    }
 
     //Handling the Other Keys Hardware
     @Override
@@ -32,6 +20,10 @@ public class AboutUsActivity extends Activity {
 
         if ((keyCode == KeyEvent.KEYCODE_HOME)) {
             System.out.println("KEYCODE_HOME");
+            return true;
+        }
+        if ((keyCode == KeyEvent.KEYCODE_POWER)) {
+            System.out.println("KEYCODE_POWER");
             return true;
         }
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
@@ -54,6 +46,32 @@ public class AboutUsActivity extends Activity {
             System.out.println("KEYCODE_VOLUME_UP");
             return true;
         }
+        if ((keyCode == KeyEvent.KEYCODE_APP_SWITCH)) {
+            System.out.println("KEYCODE_APP_SWITCH");
+            return true;
+        }
+
+
+        //Recents
         return false;
     }
+
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        Log.d("Focus debug", "Focus changed !");
+
+        if(!hasFocus) {
+            Log.d("Focus debug", "Lost focus !");
+
+            Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+            sendBroadcast(closeDialog);
+        }
+    }
+
+/*    @Override
+    public void onAttachedToWindow() {
+        getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD);
+        super.onAttachedToWindow();
+    }*/
 }

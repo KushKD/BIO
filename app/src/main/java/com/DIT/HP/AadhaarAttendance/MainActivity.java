@@ -1,4 +1,4 @@
-package com.nitgen.SDK.AndroidBSP;
+package com.DIT.HP.AadhaarAttendance;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -8,20 +8,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
 import android.os.Handler;
 import android.text.InputFilter;
 import android.util.Base64;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nitgen.SDK.AndroidBSP.NBioBSPJNI;
+import com.nitgen.SDK.AndroidBSP.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
