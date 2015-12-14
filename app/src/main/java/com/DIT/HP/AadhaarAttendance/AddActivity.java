@@ -3,6 +3,7 @@ package com.DIT.HP.AadhaarAttendance;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -86,6 +87,9 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
                 if(sampleDialogFragment!=null)
                     sampleDialogFragment.dismiss();
                 AddActivity.this.finish();
+
+                Intent i  = new Intent(AddActivity.this,MainActivity.class);
+                startActivity(i);
             }
         });
 

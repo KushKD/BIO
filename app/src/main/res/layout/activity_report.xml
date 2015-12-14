@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context="com.DIT.HP.AadhaarAttendance.MainActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,16 +17,14 @@
         <LinearLayout
             android:id="@+id/l1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="1.5"
             android:background="#f2f2f2">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="2" >
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -74,7 +73,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="0.6"
-            android:background="#f8f8f8">
+            android:background="#666666">
 
             <ListView
                 android:id="@+id/listreport"
@@ -88,67 +87,8 @@
 
 
 
-        <!-- Laout One Footer -->
-        <LinearLayout
-            android:id="@+id/l3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1.5"
-            android:background="#f0f0f0">
-
-            <LinearLayout
-                android:id="@+id/l31"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.7">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Aadhaar Logo"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/l32"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3">
-
-                <LinearLayout
-                    android:id="@+id/l321"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-
-                    <LinearLayout
-                        android:id="@+id/l3216"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:visibility="invisible"/>
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+

@@ -32,12 +32,12 @@
         "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_action_cut.png"
     },
     {
-        "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_select_all.png",
-        "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_action_select_all.png"
-    },
-    {
         "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_edit.png",
         "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_action_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_select_all.png",
+        "source": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_action_select_all.png"
     },
     {
         "merged": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_star.png",

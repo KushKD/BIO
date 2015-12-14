@@ -10,9 +10,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-
-        android:orientation="vertical"
-       >
+        android:orientation="vertical">
 
 
 
@@ -21,12 +19,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_red"
                 android:text="Place your finger on the device to mark the attendance"
-                android:gravity="center|center_vertical|center_horizontal"
-                android:textSize="24sp"
-                android:layout_marginTop="5dp"
-                android:textColor="#d52736"
-                android:textStyle="bold"/>
+               android:textColor="#FFDD41"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:layout_margin="5dp"/>
+
 
 
 
@@ -39,7 +39,7 @@
             android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:orientation="vertical"
-            android:layout_weight="0.8"
+            android:layout_weight="0.9"
             android:background="#e6e6e6">
 
 
@@ -82,12 +82,13 @@
                         android:layout_weight="1">
                     <TextView
                         android:id="@+id/tvname"
+                        android:layout_margin="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="left|center_vertical|center_horizontal"
+                        android:gravity="center|center_vertical|center_horizontal"
+                        android:background="@drawable/back"
                         android:textSize="20sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
+                        android:textColor="#a81d2e"/>
                         </LinearLayout>
 
                     <LinearLayout
@@ -100,10 +101,11 @@
                         android:id="@+id/tvaadhaarno"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="left|center_vertical|center_horizontal"
+                        android:gravity="center|center_vertical|center_horizontal"
                         android:textSize="20sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
+                        android:layout_margin="15dp"
+                        android:background="@drawable/back"
+                        android:textColor="#a81d2e"/>
                         </LinearLayout>
 
                     <LinearLayout
@@ -117,10 +119,10 @@
                         android:id="@+id/tvpunchtime"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="left|center_vertical|center_horizontal"
-                        android:textSize="20sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
+                        android:gravity="center|center_vertical|center_horizontal"
+                        android:background="@drawable/back"
+                        android:textColor="#a81d2e"
+                        android:layout_margin="15dp"/>
                         </LinearLayout>
 
                 </LinearLayout>
@@ -142,7 +144,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="#e6e6e6"
-            android:layout_weight="2.0">
+            android:layout_weight="2.1">
 
             <!-- 31 -->
             
@@ -188,106 +190,363 @@
                    android:gravity="center|center_vertical|center_horizontal"
                    android:orientation="horizontal">
 
+                   <!-- Add Button -->
                    <LinearLayout
-                   android:id="@+id/l3211"
-                       android:background="#e6e6e6"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:gravity="center|center_vertical|center_horizontal"
-                   android:layout_weight="1"
-                   android:orientation="vertical">
-
-                   <Button
                        android:id="@+id/add"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:background="@drawable/add"/>
-               </LinearLayout>
-
-
-                   <LinearLayout
-                       android:id="@+id/l3212"
                        android:layout_width="match_parent"
-                       android:background="#e6e6e6"
+                       android:background="@drawable/btn_red"
+                       android:layout_margin="10dp"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
                        android:visibility="visible"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
-                       <Button
-                           android:id="@+id/hash"
+                       <LinearLayout
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:background="#d52736"
-                           />
-                   </LinearLayout>
+                           android:layout_height="wrap_content"
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
 
 
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_add"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_add"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/image_add"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/add" />
+                               </LinearLayout>
+                               <!-- add -->
+                               <TextView
+                                   android:id="@+id/textview_add"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="Add"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_add"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
+               </LinearLayout>
+
+                   <!-- Delete Button -->
                    <LinearLayout
-                       android:id="@+id/l3213"
-                       android:background="#e6e6e6"
                        android:layout_width="match_parent"
+                       android:background="@drawable/btn_red"
+                       android:id="@+id/hash"
+                       android:layout_margin="10dp"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
+                       android:visibility="visible"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
-                       <Button
-                           android:id="@+id/report"
-                           android:layout_width="wrap_content"
+                       <!-- Delete -->
+                       <LinearLayout
+                           android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:background="@drawable/report"/>
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
+
+
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_district"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_district"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/list_image_district"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/delete" />
+                               </LinearLayout>
+                               <!-- City -->
+                               <TextView
+                                   android:id="@+id/edit_text_district"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="Delete"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_district"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
                    </LinearLayout>
 
+
+                   <!-- Report Button -->
                    <LinearLayout
-                       android:id="@+id/l3214"
+                       android:id="@+id/report"
                        android:layout_width="match_parent"
+                       android:background="@drawable/btn_red"
+                       android:layout_margin="10dp"
                        android:layout_height="match_parent"
-                       android:background="#e6e6e6"
                        android:layout_weight="1"
+                       android:visibility="visible"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
-                       <Button
-                           android:id="@+id/countusers"
-                           android:layout_width="wrap_content"
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:background="@drawable/settings"/>
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
+
+
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_report"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_report"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/image_report"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/report" />
+                               </LinearLayout>
+                               <!-- add -->
+                               <TextView
+                                   android:id="@+id/textview_report"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="Report"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_report"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
+
+
                    </LinearLayout>
 
+
+                   <!-- Settings Button -->
                    <LinearLayout
-                       android:id="@+id/l3215"
+                       android:id="@+id/countusers"
                        android:layout_width="match_parent"
+                       android:background="@drawable/btn_red"
+                       android:layout_margin="10dp"
                        android:layout_height="match_parent"
-                       android:background="#e6e6e6"
                        android:layout_weight="1"
+                       android:visibility="visible"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
-                       <Button
-                           android:id="@+id/aboutus"
-                           android:layout_width="wrap_content"
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:background="@drawable/aboutus"/>
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
+
+
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_settings"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_settings"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/image_settings"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/settings" />
+                               </LinearLayout>
+                               <!-- add -->
+                               <TextView
+                                   android:id="@+id/textview_settings"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="Settings"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_settings"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
+
+
                    </LinearLayout>
 
+
+                   <!-- About Us -->
                    <LinearLayout
-                       android:id="@+id/l3216"
+                       android:id="@+id/aboutus"
                        android:layout_width="match_parent"
+                       android:background="@drawable/btn_red"
+                       android:layout_margin="10dp"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
-                       android:background="#e6e6e6"
+                       android:visibility="visible"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 
-                       <Button
-                           android:id="@+id/closemain"
-                           android:layout_width="wrap_content"
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:background="@drawable/close"/>
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
+
+
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_aboutus"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_aboutus"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/image_aboutus"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/aboutus" />
+                               </LinearLayout>
+                               <!-- add -->
+                               <TextView
+                                   android:id="@+id/textview_aboutus"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="About Us"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_aboutus"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
+
+
                    </LinearLayout>
 
+                   <!-- Close MAin -->
+                   <LinearLayout
+                       android:id="@+id/closemain"
+                       android:layout_width="match_parent"
+                       android:background="@drawable/btn_red"
+                       android:layout_margin="10dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:visibility="visible"
+                       android:gravity="center|center_vertical|center_horizontal"
+                       android:orientation="vertical">
+
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="5dp"
+                           android:orientation="vertical">
+
+
+                           <RelativeLayout
+                               android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/button_close"
+                               android:orientation="vertical"
+                               android:padding="5dip" >
+                               <!-- ListRow Left side Thumbnail image -->
+                               <LinearLayout
+                                   android:id="@+id/thumbnail_close"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:gravity="center|center_vertical|center_horizontal"
+                                   android:padding="3dip" >
+                                   <ImageView
+                                       android:id="@+id/image_close"
+                                       android:contentDescription="@string/app_name"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:src="@drawable/close" />
+                               </LinearLayout>
+                               <!-- add -->
+                               <TextView
+                                   android:id="@+id/textview_close"
+                                   android:layout_width="match_parent"
+                                   android:gravity="center|center_horizontal|center_vertical"
+                                   android:layout_height="wrap_content"
+                                   android:text="Close"
+                                   style="@style/ButtonText"
+                                   android:layout_below="@+id/thumbnail_close"
+                                   android:layout_centerVertical="true"
+                                   android:paddingBottom ="10dip"
+                                   />
+
+
+                           </RelativeLayout>
+                       </LinearLayout>
+
+
+                   </LinearLayout>
 
 
                </LinearLayout>

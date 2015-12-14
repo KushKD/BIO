@@ -55,6 +55,9 @@
         <activity
             android:name="com.DIT.HP.AadhaarAttendance.AboutUsActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="com.DIT.HP.AadhaarAttendance.Main2Activity"
+            android:label="@string/title_activity_main2" />
     </application>
 
 </manifest>

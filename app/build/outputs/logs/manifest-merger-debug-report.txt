@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:1-60:12
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:1-63:12
 	xmlns:android
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -58,7 +58,7 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:19:22-75
 application
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:21:5-58:19
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:21:5-61:19
 	android:label
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:23:9-41
 	android:icon
@@ -98,7 +98,7 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:40:17-79
 activity#com.DIT.HP.AadhaarAttendance.Android_Demo
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:43:9-46:52
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:43:9-46:53
 	android:screenOrientation
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:46:13-50
 	android:label
@@ -106,7 +106,7 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:44:13-69
 activity#com.DIT.HP.AadhaarAttendance.AddActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:47:9-50:52
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:47:9-50:53
 	android:screenOrientation
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:50:13-50
 	android:label
@@ -114,7 +114,7 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:48:13-68
 activity#com.DIT.HP.AadhaarAttendance.ReportActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:51:9-54:52
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:51:9-54:53
 	android:screenOrientation
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:54:13-50
 	android:label
@@ -122,8 +122,14 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:52:13-71
 activity#com.DIT.HP.AadhaarAttendance.AboutUsActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:56:9-57:68
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:55:9-57:53
 	android:screenOrientation
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:57:19-56
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:57:13-50
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:56:19-78
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:56:13-72
+activity#com.DIT.HP.AadhaarAttendance.Main2Activity
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:58:9-60:69
+	android:label
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:60:13-57
+	android:name
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:59:13-70

@@ -43,18 +43,21 @@
         <activity
             android:name="com.DIT.HP.AadhaarAttendance.Android_Demo"
             android:label="@string/title_activity_main"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name="com.DIT.HP.AadhaarAttendance.AddActivity"
             android:label="@string/title_activity_add"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name="com.DIT.HP.AadhaarAttendance.ReportActivity"
             android:label="@string/title_activity_report"
-            android:screenOrientation="landscape"/>
-
-        <activity android:name="com.DIT.HP.AadhaarAttendance.AboutUsActivity"
-                  android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.DIT.HP.AadhaarAttendance.AboutUsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.DIT.HP.AadhaarAttendance.Main2Activity"
+            android:label="@string/title_activity_main2"></activity>
     </application>
 
 </manifest>

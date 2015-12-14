@@ -1,11 +1,13 @@
 package com.DIT.HP.AadhaarAttendance;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,7 +31,8 @@ import java.util.HashMap;
 
 public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
 
-    Button bt_Add , bt_Close , bt_Report , bt_Aboutus , bt_countUsers, bt_hash;
+
+    LinearLayout bt_hash ,bt_Add, bt_Report,bt_countUsers,bt_Aboutus ,bt_Close;
     private static final String PASSWORD_ADMIN = "password";
     ImageView iv_VerifyFinger;
     private Handler  StopCodeForTwoSeconds = new Handler();
@@ -70,13 +73,19 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bt_Add = (Button)findViewById(R.id.add);
-        bt_Close = (Button)findViewById(R.id.closemain);
-        bt_Report = (Button)findViewById(R.id.report);
-        bt_Aboutus = (Button)findViewById(R.id.aboutus);
-        bt_countUsers = (Button)findViewById(R.id.countusers);
+        ActionBar bar = getActionBar();
+//for color
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e6e6e6")));
+//for image
+     //   bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_launcher));
+
+        bt_Add = (LinearLayout)findViewById(R.id.add);
+        bt_Close = (LinearLayout)findViewById(R.id.closemain);
+        bt_Report = (LinearLayout)findViewById(R.id.report);
+        bt_Aboutus = (LinearLayout)findViewById(R.id.aboutus);
+        bt_countUsers = (LinearLayout)findViewById(R.id.countusers);
         iv_VerifyFinger = (ImageView)findViewById(R.id.imagefingerverify);
-        bt_hash =(Button)findViewById(R.id.hash);
+        bt_hash =(LinearLayout)findViewById(R.id.hash);
 
         tv_Name = (TextView)findViewById(R.id.tvname);
         tv_Aadhaar = (TextView)findViewById(R.id.tvaadhaarno);
@@ -96,8 +105,10 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         bt_Add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                MainActivity.this.finish();
                 Intent iadd = new Intent(MainActivity.this,AddActivity.class);
                 startActivity(iadd);
+
             }
         });
 
