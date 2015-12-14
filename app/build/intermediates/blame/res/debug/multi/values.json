@@ -127,17 +127,17 @@
                     "startLine": 12,
                     "startColumn": 4,
                     "startOffset": 653,
-                    "endColumn": 79,
-                    "endOffset": 728
+                    "endColumn": 69,
+                    "endOffset": 718
                 },
                 "from": {
-                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 2,
+                        "startLine": 26,
                         "startColumn": 4,
-                        "startOffset": 19,
-                        "endColumn": 80,
-                        "endOffset": 95
+                        "startOffset": 1158,
+                        "endColumn": 69,
+                        "endOffset": 1223
                     }
                 }
             },
@@ -145,10 +145,22 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 733,
-                    "endLine": 25,
+                    "startOffset": 723,
+                    "endColumn": 79,
+                    "endOffset": 798
+                },
+                "from": {
+                    "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 803,
+                    "endLine": 26,
                     "endColumn": 12,
-                    "endOffset": 1356
+                    "endOffset": 1426
                 },
                 "from": {
                     "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values\\strings.xml"

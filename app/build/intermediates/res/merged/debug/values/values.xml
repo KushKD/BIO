@@ -10,6 +10,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_report">ReportActivity</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
     <style name="AppTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen"/>
     <style name="ButtonText">
         <item name="android:layout_width">fill_parent</item>

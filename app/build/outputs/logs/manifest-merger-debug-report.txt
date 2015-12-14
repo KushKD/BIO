@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:1-63:12
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:1-70:12
 	xmlns:android
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -58,15 +58,15 @@ ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:19:22-75
 application
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:21:5-61:19
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:21:5-68:19
 	android:label
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:23:9-41
 	android:icon
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:22:9-45
 	android:theme
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:24:9-40
-activity#com.DIT.HP.AadhaarAttendance.MainActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:25:9-42:20
+activity#com.DIT.HP.AadhaarAttendance.SplashScreen
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:25:9-36:20
 	android:screenOrientation
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:29:13-50
 	android:label
@@ -85,51 +85,47 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
 		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:33:27-74
-intent-filter#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:35:13-37:29
-action#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:36:17-90
-	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:36:25-87
-meta-data#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:39:13-41:64
-	android:resource
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:41:17-61
-	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:40:17-79
 activity#com.DIT.HP.AadhaarAttendance.Android_Demo
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:43:9-46:53
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:37:9-40:53
 	android:screenOrientation
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:46:13-50
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:40:13-50
 	android:label
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:45:13-56
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:44:13-69
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:38:13-69
 activity#com.DIT.HP.AadhaarAttendance.AddActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:47:9-50:53
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:41:9-44:53
 	android:screenOrientation
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:50:13-50
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:44:13-50
 	android:label
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:49:13-55
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:43:13-55
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:48:13-68
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:42:13-68
 activity#com.DIT.HP.AadhaarAttendance.ReportActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:51:9-54:53
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:45:9-48:53
 	android:screenOrientation
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:54:13-50
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:48:13-50
 	android:label
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:53:13-58
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:47:13-58
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:52:13-71
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:46:13-71
 activity#com.DIT.HP.AadhaarAttendance.AboutUsActivity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:55:9-57:53
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:49:9-51:53
 	android:screenOrientation
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:57:13-50
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:51:13-50
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:56:13-72
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:50:13-72
 activity#com.DIT.HP.AadhaarAttendance.Main2Activity
-ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:58:9-60:69
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:52:9-54:60
 	android:label
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:60:13-57
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:54:13-57
 	android:name
-		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:59:13-70
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:53:13-70
+activity#com.DIT.HP.AadhaarAttendance.MainActivity
+ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:55:9-67:20
+	android:screenOrientation
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:58:13-50
+	android:label
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:57:13-65
+	android:name
+		ADDED from C:\Users\kuush\AndroidStudioProjects\NBioBSPDemo1\app\src\main\AndroidManifest.xml:56:13-69
