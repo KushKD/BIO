@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context="com.DIT.HP.AadhaarAttendance.MainActivity">
 
@@ -12,94 +13,21 @@
         android:orientation="vertical" >
 
 
-        <!-- Laout One Header -->
-        <LinearLayout
-            android:id="@+id/l1"
+
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1.5"
-            android:background="#f2f2f2">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Add User with Logo"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:orientation="vertical">
-
-                     <LinearLayout
-                         android:layout_width="match_parent"
-                         android:layout_height="match_parent">
-                         <Button
-                             android:id="@+id/detectdeviceadd"
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-                             android:text="Detect Device"
-                             android:gravity="center|center_vertical|center_horizontal"
-                             android:textSize="24sp"
-                             android:textColor="#000000"
-                             android:textStyle="bold"/>
-                     </LinearLayout>
-
-                     <LinearLayout
-                         android:layout_width="match_parent"
-                         android:layout_height="match_parent">
-                         <TextView
-                             android:id="@+id/tvstatus"
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-                             android:text="Detect Device"
-                             android:gravity="center|center_vertical|center_horizontal"
-                             android:textSize="24sp"
-                             android:textColor="#000000"
-                             android:textStyle="bold"/>
-                     </LinearLayout>
-
-                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <Button
-                        android:id="@+id/close"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Close"
-                        android:gravity="center|center_vertical|center_horizontal"
-                        android:textSize="24sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"/>
-                </LinearLayout>
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_red"
+            android:text="Add User"
+            android:textColor="#FFDD41"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:layout_margin="5dp"/>
 
 
-            </LinearLayout>
 
-
-        </LinearLayout>
 
 
         <!-- Laout One Body -->
@@ -108,14 +36,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="0.6"
-            android:background="#f8f8f8">
+            android:layout_margin="10dp"
+            android:layout_weight="0.7"
+            android:background="#e6e6e6">
 
             <LinearLayout
                 android:id="@+id/l21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:orientation="vertical"
+
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -136,7 +67,7 @@
                                 android:text="Enter Aadhaar"
                                 android:gravity="center|center_vertical|center_horizontal"
                                 android:textSize="24sp"
-                                android:textColor="#000000"
+                                android:textColor="#a81d2e"
                                 android:textStyle="bold"/>
                         </LinearLayout>
 
@@ -149,11 +80,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="number"
+                            android:layout_margin="10dp"
                             android:maxLength="12"
+                            android:textStyle="bold"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -166,7 +99,8 @@
                             android:layout_height="match_parent"
                             android:gravity="center|center_vertical|center_horizontal"
                             android:textSize="24sp"
-                            android:textColor="#000000"
+                            style="@style/ButtonText"
+                            android:background="@drawable/btn_red"
                             android:text="Verify"
                             android:textStyle="bold"/>
                     </LinearLayout>
@@ -186,32 +120,33 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:layout_margin="5dp"
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/tvname"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="Name"
-                            android:visibility="visible"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#a81d2e"/>
 
                         <EditText
                             android:id="@+id/etname"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="Name"
+                            android:textStyle="bold"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:visibility="gone"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/x3"
+                        android:layout_margin="5dp"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -220,40 +155,40 @@
                             android:id="@+id/tvco"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="C/O"
-                            android:visibility="visible"
+                            android:textStyle="bold"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
 
                         <EditText
                             android:id="@+id/etco"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="C/O"
+                            android:textStyle="bold"
                             android:visibility="gone"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
+                        android:layout_margin="5dp"
                         android:layout_weight="1">
                         <TextView
                             android:id="@+id/tvdob"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="DOB"
-                            android:visibility="visible"
+                            android:textStyle="bold"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
 
                         <EditText
                             android:id="@+id/etdob"
@@ -261,10 +196,11 @@
                             android:layout_height="match_parent"
                             android:visibility="gone"
                             android:hint="DD-MM-YYYY"
+                            android:textStyle="bold"
                             android:gravity="center|center_vertical|center_horizontal"
-                            android:textSize="24sp"
-                            android:textColor="#000000"
-                            android:textStyle="bold"/>
+                            android:background="@drawable/back"
+                            android:textSize="22sp"
+                            android:textColor="#a81d2e"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -291,12 +227,15 @@
                         android:id="@+id/imagefingureone"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:background="@drawable/ic_launcher"/>
+                        android:background="#666666"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scan first finger"/>
+                        android:textColor="#a81d2e"
+                        android:text="Scan First Finger"
+                        android:textSize="18sp"
+                      />
 
 
 
@@ -321,12 +260,14 @@
                             android:id="@+id/imagefinguretwo"
                             android:layout_width="130dp"
                             android:layout_height="130dp"
-                            android:background="@drawable/ic_launcher"/>
+                            android:background="#666666"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Scan second fingure"/>
+                            android:textColor="#a81d2e"
+                            android:text="Scan Second Finger"
+                            android:textSize="18sp"/>
 
 
 
@@ -354,27 +295,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_weight="1.5"
-            android:background="#f0f0f0">
+            android:background="#e6e6e6"
+            android:layout_weight="2.1">
+
+            <!-- 31 -->
 
             <LinearLayout
                 android:id="@+id/l31"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="left|center_horizontal|center_vertical"
                 android:layout_weight="0.7">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Aadhaar Logo"
-                    android:gravity="center|center_vertical|center_horizontal"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
+                    android:layout_margin="5dp"
+                    android:background="@drawable/footer"
+                    android:layout_weight="1"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"></LinearLayout>
+
 
             </LinearLayout>
 
+
+            <!-- 32 -->
             <LinearLayout
                 android:id="@+id/l32"
                 android:orientation="vertical"
@@ -389,19 +339,196 @@
                     android:orientation="horizontal">
 
 
+                    <!-- Add Button -->
                     <LinearLayout
-                        android:id="@+id/l3216"
+                        android:id="@+id/savex"
                         android:layout_width="match_parent"
+                        android:background="@drawable/btn_red"
+                        android:layout_margin="10dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:gravity="center|center_vertical|center_horizontal"
                         android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/save"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Save"/>
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/button_add"
+                                android:orientation="vertical"
+                                android:padding="5dip" >
+                                <!-- ListRow Left side Thumbnail image -->
+                                <LinearLayout
+                                    android:id="@+id/thumbnail_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|center_vertical|center_horizontal"
+                                    android:padding="3dip" >
+                                    <ImageView
+                                        android:id="@+id/image_add"
+                                        android:contentDescription="@string/app_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/add" />
+                                </LinearLayout>
+                                <!-- add -->
+                                <TextView
+                                    android:id="@+id/textview_add"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:text="Add"
+                                    style="@style/ButtonText"
+                                    android:layout_below="@+id/thumbnail_add"
+                                    android:layout_centerVertical="true"
+                                    android:paddingBottom ="10dip"
+                                    />
+
+
+                            </RelativeLayout>
+                        </LinearLayout>
                     </LinearLayout>
+
+                    <!-- Delete Button -->
+                    <!-- Add Button -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/btn_red"
+                        android:layout_margin="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:gravity="center|center_vertical|center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="5dip" >
+                                <!-- ListRow Left side Thumbnail image -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|center_vertical|center_horizontal"
+                                    android:padding="3dip" >
+                                    <ImageView
+                                        android:contentDescription="@string/app_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/add" />
+                                </LinearLayout>
+                                <!-- add -->
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:text="Add"
+                                    style="@style/ButtonText"
+                                    android:layout_centerVertical="true"
+                                    android:paddingBottom ="10dip"
+                                    />
+
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!-- Report Button -->
+
+
+                    <!-- Settings Button -->
+                    <LinearLayout
+                        android:id="@+id/save"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/btn_red"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        android:gravity="center|center_vertical|center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+
+
+
+                                <!-- add -->
+                                <TextView
+                                    android:id="@+id/textview_settings"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:layout_height="match_parent"
+                                    android:text="Save"
+                                    style="@style/ButtonText"
+                                    android:layout_centerVertical="true"
+                                    />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <!-- About Us -->
+
+                    <!-- Close MAin -->
+                    <LinearLayout
+                        android:id="@+id/closemain"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/btn_red"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:visibility="visible"
+                        android:gravity="center|center_vertical|center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:id="@+id/textview_close"
+                                    android:layout_width="match_parent"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:text="Close"
+                                    style="@style/ButtonText"
+                                    android:layout_below="@+id/thumbnail_close"
+                                    android:layout_centerVertical="true"
+                                    />
+
+
+                        </LinearLayout>
+
 
 
 
@@ -411,5 +538,7 @@
         </LinearLayout>
 
     </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
-</LinearLayout>
+

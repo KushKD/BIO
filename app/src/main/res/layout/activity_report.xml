@@ -29,9 +29,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Local Report"
+                    android:background="#e2e2e2"
                     android:gravity="center|center_vertical|center_horizontal"
                     android:textSize="24sp"
-                    android:textColor="#000000"
+                    android:textColor="#a81d2e"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -54,8 +55,8 @@
                         android:layout_height="match_parent"
                         android:text="Close"
                         android:gravity="center|center_vertical|center_horizontal"
-                        android:textSize="24sp"
-                        android:textColor="#000000"
+                        style="@style/ButtonText"
+                        android:background="@drawable/btn_red"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -72,8 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="0.6"
-            android:background="#666666">
+            android:layout_weight="0.6">
 
             <ListView
                 android:id="@+id/listreport"

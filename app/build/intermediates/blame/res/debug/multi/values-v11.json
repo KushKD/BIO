@@ -7,8 +7,8 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 62,
-                    "endOffset": 113
+                    "endColumn": 79,
+                    "endOffset": 130
                 },
                 "from": {
                     "file": "C:\\Users\\kuush\\AndroidStudioProjects\\NBioBSPDemo1\\app\\src\\main\\res\\values-v11\\styles.xml",
@@ -16,8 +16,8 @@
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 19,
-                        "endColumn": 63,
-                        "endOffset": 78
+                        "endColumn": 80,
+                        "endOffset": 95
                     }
                 }
             }

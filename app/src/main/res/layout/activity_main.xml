@@ -13,9 +13,6 @@
         android:orientation="vertical">
 
 
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,7 +20,7 @@
                 android:text="Place your finger on the device to mark the attendance"
                android:textColor="#FFDD41"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:layout_margin="5dp"/>
 
@@ -121,6 +118,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center|center_vertical|center_horizontal"
                         android:background="@drawable/back"
+                        android:textSize="20sp"
                         android:textColor="#a81d2e"
                         android:layout_margin="15dp"/>
                         </LinearLayout>
@@ -255,7 +253,7 @@
                        android:layout_margin="10dp"
                        android:layout_height="match_parent"
                        android:layout_weight="1"
-                       android:visibility="visible"
+                       android:visibility="gone"
                        android:gravity="center|center_vertical|center_horizontal"
                        android:orientation="vertical">
 

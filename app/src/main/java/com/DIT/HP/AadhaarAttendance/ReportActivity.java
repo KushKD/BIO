@@ -80,7 +80,7 @@ public class ReportActivity extends BaseActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             list.setAdapter(bindingData);
-            Toast.makeText(ReportActivity.this,s,Toast.LENGTH_LONG).show();
+           // Toast.makeText(ReportActivity.this,s,Toast.LENGTH_LONG).show();
         }
     }
 

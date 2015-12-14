@@ -73,11 +73,11 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar bar = getActionBar();
+      /*  ActionBar bar = getActionBar();
 //for color
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e6e6e6")));
 //for image
-     //   bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_launcher));
+     //   bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_launcher));*/
 
         bt_Add = (LinearLayout)findViewById(R.id.add);
         bt_Close = (LinearLayout)findViewById(R.id.closemain);
@@ -799,7 +799,7 @@ public class MainActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CAL
 
             }
             }else{
-                message = "There is No Data in the Database.Please Add the User";
+                message = "User Not Registered";
             }
             if(message==null){
                 message="User Not Registered";

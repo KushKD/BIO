@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,8 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private NBioBSPJNI				bsp;
     private NBioBSPJNI.Export       exportEngine;
     private NBioBSPJNI.IndexSearch  indexSearch;
-    private Button                  bt_Close , bt_Verify , bt_DetectDevice,save;
+    private Button                   bt_Verify , bt_DetectDevice;
+    LinearLayout bt_Close,save;
     private EditText                et_Aadhaar, et_Name  ,et_CO,et_DOB;
     private TextView                tv_Name, tv_DOB , tv_CO , tv_Status;
     public List<UserPojo>          userlist;
@@ -59,16 +61,16 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        save = (Button)findViewById(R.id.save);
+        save = (LinearLayout)findViewById(R.id.save);
         save.setEnabled(false);
-        bt_Close = (Button)findViewById(R.id.close);
+        bt_Close = (LinearLayout)findViewById(R.id.closemain);
         bt_Verify = (Button)findViewById(R.id.verifyaadhaar);
-        bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
+      //  bt_DetectDevice = (Button)findViewById(R.id.detectdeviceadd);
         et_Aadhaar = (EditText)findViewById(R.id.et_aadhaar);
         tv_Name = (TextView)findViewById(R.id.tvname);
         tv_DOB = (TextView)findViewById(R.id.tvdob);
         tv_CO = (TextView)findViewById(R.id.tvco);
-        tv_Status = (TextView)findViewById(R.id.tvstatus);
+      //  tv_Status = (TextView)findViewById(R.id.tvstatus);
         iv_ImageFingureOne = (ImageView)findViewById(R.id.imagefingureone);
         iv_ImageFingureTwo = (ImageView)findViewById(R.id.imagefinguretwo);
         et_Name = (EditText)findViewById(R.id.etname);
@@ -262,7 +264,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
                 exportEngine = bsp.new Export();
                 indexSearch = bsp.new IndexSearch();
             }
-            tv_Status.setText(msg);
+           // tv_Status.setText(msg);
         }
 
         sampleDialogFragment = new SampleDialogFragment();
@@ -396,7 +398,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
                         public void run() {
                             msg = "NBioBSP ExportFIR Error: " + bsp.GetErrorCode();
-                            tv_Status.setText(msg);
+                           // tv_Status.setText(msg);
                             Toast.makeText(AddActivity.this, msg, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -429,7 +431,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
                         public void run() {
                             msg = "NBioBSP ExportAudit Error: " + bsp.GetErrorCode();
-                            tv_Status.setText(msg);
+                           // tv_Status.setText(msg);
                            // Toast.makeText(AddActivity.this, msg, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -455,7 +457,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         runOnUiThread(new Runnable() {
 
             public void run() {
-                tv_Status.setText(msg);
+               // tv_Status.setText(msg);
 
                 if (byTemplate1Fingure != null && byTemplate2Fingure != null)  {
                     save.setEnabled(true);
@@ -514,7 +516,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
                         public void run() {
                             msg = "NBioBSP ExportFIR Error: " + bsp.GetErrorCode();
-                            tv_Status.setText(msg);
+                          //  tv_Status.setText(msg);
                             Toast.makeText(AddActivity.this, msg, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -545,7 +547,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
 
                         public void run() {
                             msg = "NBioBSP ExportAudit Error: " + bsp.GetErrorCode();
-                            tv_Status.setText(msg);
+                          //  tv_Status.setText(msg);
                             // Toast.makeText(Android_Demo.this, msg, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -570,7 +572,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         runOnUiThread(new Runnable() {
 
             public void run() {
-                tv_Status.setText(msg);
+              //  tv_Status.setText(msg);
 
                 if (byTemplate1Fingure != null && byTemplate2Fingure != null) {
                     save.setEnabled(true);
@@ -621,7 +623,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
             sampleDialogFragment.dismiss();
 
         String message = "Device Open Success";
-        tv_Status.setText(message);
+       // tv_Status.setText(message);
 
     }
 
@@ -632,7 +634,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
             sampleDialogFragment.dismiss();
 
         String message = "NBioBSP Disconnected: " + bsp.GetErrorCode();
-        tv_Status.setText(message);
+       // tv_Status.setText(message);
 
     }
 

@@ -17,7 +17,7 @@ public class AboutUsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
 
-        bt_Close = (Button)findViewById(R.id.closeaboutus);
+        bt_Close = (Button)findViewById(R.id.closereport);
 
         bt_Close.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
