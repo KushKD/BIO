@@ -20,9 +20,9 @@
                 android:text="Place your finger on the device to mark the attendance"
                android:textColor="#FFDD41"
                 android:textStyle="bold"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:layout_margin="5dp"/>
+                android:layout_margin="10dp"/>
 
 
 
@@ -79,7 +79,7 @@
                         android:layout_weight="1">
                     <TextView
                         android:id="@+id/tvname"
-                        android:layout_margin="15dp"
+                        android:layout_margin="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|center_vertical|center_horizontal"
@@ -100,7 +100,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center|center_vertical|center_horizontal"
                         android:textSize="20sp"
-                        android:layout_margin="15dp"
+                        android:layout_margin="25dp"
                         android:background="@drawable/back"
                         android:textColor="#a81d2e"/>
                         </LinearLayout>
@@ -120,7 +120,7 @@
                         android:background="@drawable/back"
                         android:textSize="20sp"
                         android:textColor="#a81d2e"
-                        android:layout_margin="15dp"/>
+                        android:layout_margin="25dp"/>
                         </LinearLayout>
 
                 </LinearLayout>
@@ -403,7 +403,7 @@
                                        android:contentDescription="@string/app_name"
                                        android:layout_width="wrap_content"
                                        android:layout_height="wrap_content"
-                                       android:src="@drawable/settings" />
+                                       android:src="@drawable/detectdevice" />
                                </LinearLayout>
                                <!-- add -->
                                <TextView
@@ -411,7 +411,7 @@
                                    android:layout_width="match_parent"
                                    android:gravity="center|center_horizontal|center_vertical"
                                    android:layout_height="wrap_content"
-                                   android:text="Settings"
+                                   android:text="Detect Device"
                                    style="@style/ButtonText"
                                    android:layout_below="@+id/thumbnail_settings"
                                    android:layout_centerVertical="true"

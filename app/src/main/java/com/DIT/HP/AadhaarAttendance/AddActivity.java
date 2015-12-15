@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,13 +26,13 @@ import com.DIT.HP.Aadhaar.R;
 
 import java.util.List;
 
-public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
+public class AddActivity extends BaseActivity implements NBioBSPJNI.CAPTURE_CALLBACK, SampleDialogFragment.SampleDialogListener, UserDialog.UserDialogListener {
 
     private NBioBSPJNI				bsp;
     private NBioBSPJNI.Export       exportEngine;
     private NBioBSPJNI.IndexSearch  indexSearch;
     private Button                   bt_Verify , bt_DetectDevice;
-    LinearLayout bt_Close,save;
+    LinearLayout                        bt_Close,save;
     private EditText                et_Aadhaar, et_Name  ,et_CO,et_DOB;
     private TextView                tv_Name, tv_DOB , tv_CO , tv_Status;
     public List<UserPojo>          userlist;
@@ -54,7 +55,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
     private String                  Base64_template1 , Base64_template2;  //Base64 Fingure one and Fingure Two
     private ImageView               iv_ImageFingureOne, iv_ImageFingureTwo;
 
-    public static final int QUALITY_LIMIT = 80;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -604,7 +605,7 @@ public class AddActivity extends Activity implements NBioBSPJNI.CAPTURE_CALLBACK
         }
 
         // quality : 40~100
-        if(capturedData.getImageQuality()>=QUALITY_LIMIT){
+        if(capturedData.getImageQuality()>=EConstants.QUALITY_LIMIT){
             if(sampleDialogFragment!=null && "DIALOG_TYPE_PROGRESS".equals(sampleDialogFragment.getTag()))
                 sampleDialogFragment.dismiss();
             return NBioBSPJNI.ERROR.NBioAPIERROR_USER_CANCEL;

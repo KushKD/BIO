@@ -13,4 +13,9 @@ public class EConstants {
     public static final String ListEmpty = "User Not found , Please contact the Aadhaar team .";
     public static final String MultipleUser = "Multiple Records Found with this Aadhaar Number . Please contact the Aadhaar team . ";
     public static final String ErrorMessageUnknow = "Something Went Wrong. Please check your network connectivity";
+
+
+    public static final String PASSWORD_ADMIN = "";
+    public static final int QUALITY_LIMIT = ;
+
 }
