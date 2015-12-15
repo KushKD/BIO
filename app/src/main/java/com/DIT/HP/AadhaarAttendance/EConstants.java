@@ -16,6 +16,6 @@ public class EConstants {
 
 
     public static final String PASSWORD_ADMIN = "";
-    public static final int QUALITY_LIMIT = ;
+    public static final int QUALITY_LIMIT = 0;
 
 }

@@ -234,7 +234,7 @@
                         android:id="@+id/imagefingureone"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:background="#666666"/>
+                        android:background="@drawable/scanfinger"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -267,7 +267,7 @@
                             android:id="@+id/imagefinguretwo"
                             android:layout_width="130dp"
                             android:layout_height="130dp"
-                            android:background="#666666"/>
+                            android:background="@drawable/scanfinger"/>
 
                         <TextView
                             android:layout_width="wrap_content"

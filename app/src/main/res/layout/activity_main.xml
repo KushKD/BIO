@@ -60,7 +60,7 @@
                         android:id="@+id/imagefingerverify"
                         android:layout_width="170dp"
                         android:layout_height="170dp"
-                        android:background="#666666"/>
+                        android:background="@drawable/scanfinger"/>
                     
                 </LinearLayout>
 
